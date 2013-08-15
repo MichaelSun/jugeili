@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/JGL.iml" filepath="$PROJECT_DIR$/JGL.iml" />
       <module fileurl="file://$PROJECT_DIR$/JGLCusLib.iml" filepath="$PROJECT_DIR$/JGLCusLib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pull2refresh.iml" filepath="$PROJECT_DIR$/pull2refresh.iml" />
     </modules>
   </component>
 </project>
