@@ -7,4 +7,16 @@
     <!-- 电影页面 -->
     <string name="movie_title">电影</string>
 
+    <!-- 周边 -->
+    <string name="location_title">周边</string>
+
+    <!-- 团购 -->
+    <string name="tuangou_title">团购</string>
+
+    <!-- 我的 -->
+    <string name="profile_title">我的</string>
+
+    <!-- 更多 -->
+    <string name="more_title">更多</string>
+
 </resources>

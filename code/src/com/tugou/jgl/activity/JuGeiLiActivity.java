@@ -1,28 +1,44 @@
 package com.tugou.jgl.activity;
 
-import android.content.Intent;
+
+import android.app.ActionBar;
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
-import android.app.Activity;
 import android.view.Menu;
 import android.view.View;
 import com.tugou.jgl.R;
+import com.tugou.jgl.fragment.LocationFrament;
 
-public class JuGeiLiActivity extends Activity {
+public class JuGeiLiActivity extends BaseActivity {
+
+    private static final String TAG_CHAT_LIST_FRAGMENT = "location_fragment";
+    private static final String TAG_CONTACT_FRAGMENT = "tuangou_fragment";
+    private static final String TAG_PROFILE_FRAGMENT = "profile_fragment";
+    private static final String TAG_SETTING_FRAGMENT = "more_fragment";
+
+    private static final String KEY_CURR_SELECTED_TAB_ID = "key_curr_selected_tab_id";
+
+    private FragmentManager mFragmentManager;
+    private int mCurrSelectedTabId;
+    private Fragment mLocationFragment;
+    private Fragment mTuangouFragment;
+    private Fragment mProfileFragment;
+    private Fragment mMoreFragment;
+
+    private View mLocationBtn;
+    private View mTuangouBtn;
+    private View mProfileBtn;
+    private View mMoreBtn;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jugeili);
 
-        View view = findViewById(R.id.test);
-        view.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent();
-                i.setClass(getApplicationContext(), SubListActivity.class);
-                startActivity(i);
-            }
-        });
+        initData(savedInstanceState);
+        initUI();
     }
 
     @Override
@@ -32,4 +48,148 @@ public class JuGeiLiActivity extends Activity {
         return true;
     }
 
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        outState.putInt(KEY_CURR_SELECTED_TAB_ID, mCurrSelectedTabId);
+    }
+
+    private void initUI() {
+        mLocationBtn = findViewById(R.id.location);
+        mTuangouBtn = findViewById(R.id.tuangou);
+        mProfileBtn = findViewById(R.id.profile);
+        mMoreBtn = findViewById(R.id.more);
+
+        View.OnClickListener tabClickListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                switchToTab(v.getId());
+            }
+        };
+        mLocationBtn.setOnClickListener(tabClickListener);
+        mTuangouBtn.setOnClickListener(tabClickListener);
+        mProfileBtn.setOnClickListener(tabClickListener);
+        mMoreBtn.setOnClickListener(tabClickListener);
+
+        switchToTab(mCurrSelectedTabId);
+    }
+
+    private void initData(Bundle savedInstanceState) {
+        if (savedInstanceState != null) {
+            mCurrSelectedTabId = savedInstanceState.getInt(KEY_CURR_SELECTED_TAB_ID);
+        } else {
+            mCurrSelectedTabId = R.id.location;
+        }
+
+        mFragmentManager = getFragmentManager();
+
+        mLocationFragment = mFragmentManager.findFragmentByTag(TAG_CHAT_LIST_FRAGMENT);
+        if (mLocationFragment == null) {
+            mLocationFragment = new LocationFrament();
+
+            FragmentTransaction trans = mFragmentManager.beginTransaction();
+            trans.add(R.id.fragment_container, mLocationFragment, TAG_CHAT_LIST_FRAGMENT);
+            trans.commit();
+        }
+
+        mTuangouFragment = mFragmentManager.findFragmentByTag(TAG_CONTACT_FRAGMENT);
+        if (mTuangouFragment == null) {
+            mTuangouFragment = new LocationFrament();
+
+            FragmentTransaction trans = mFragmentManager.beginTransaction();
+            trans.add(R.id.fragment_container, mTuangouFragment, TAG_CONTACT_FRAGMENT);
+            trans.commit();
+        }
+
+        mProfileFragment = mFragmentManager.findFragmentByTag(TAG_PROFILE_FRAGMENT);
+        if (mProfileFragment == null) {
+            mProfileFragment = new LocationFrament();
+
+            FragmentTransaction trans = mFragmentManager.beginTransaction();
+            trans.add(R.id.fragment_container, mProfileFragment, TAG_PROFILE_FRAGMENT);
+            trans.commit();
+        }
+
+        mMoreFragment = mFragmentManager.findFragmentByTag(TAG_SETTING_FRAGMENT);
+        if (mMoreFragment == null) {
+            mMoreFragment = new LocationFrament();
+
+            FragmentTransaction trans = mFragmentManager.beginTransaction();
+            trans.add(R.id.fragment_container, mMoreFragment, TAG_SETTING_FRAGMENT);
+            trans.commit();
+        }
+
+    }
+
+    private void switchToTab(int tabId) {
+        FragmentTransaction tans = mFragmentManager.beginTransaction();
+
+        switch (tabId) {
+            case R.id.location:
+                mCurrSelectedTabId = R.id.location;
+                mActionbar.setDisplayOptions(ActionBar.DISPLAY_SHOW_TITLE);
+                mActionbar.setTitle(R.string.location_title);
+
+                mLocationBtn.setSelected(true);
+                mTuangouBtn.setSelected(false);
+                mProfileBtn.setSelected(false);
+                mMoreBtn.setSelected(false);
+
+                tans.show(mLocationFragment);
+                tans.hide(mTuangouFragment);
+                tans.hide(mProfileFragment);
+                tans.hide(mMoreFragment);
+                break;
+
+            case R.id.tuangou:
+                mCurrSelectedTabId = R.id.tuangou;
+                mActionbar.setDisplayOptions(ActionBar.DISPLAY_SHOW_TITLE);
+                mActionbar.setTitle(R.string.tuangou_title);
+
+                mLocationBtn.setSelected(false);
+                mTuangouBtn.setSelected(true);
+                mProfileBtn.setSelected(false);
+                mMoreBtn.setSelected(false);
+
+                tans.hide(mLocationFragment);
+                tans.show(mTuangouFragment);
+                tans.hide(mProfileFragment);
+                tans.hide(mMoreFragment);
+                break;
+
+            case R.id.profile:
+                mCurrSelectedTabId = R.id.profile;
+                mActionbar.setDisplayOptions(ActionBar.DISPLAY_SHOW_TITLE);
+                mActionbar.setTitle(R.string.profile_title);
+
+                mLocationBtn.setSelected(false);
+                mTuangouBtn.setSelected(false);
+                mProfileBtn.setSelected(true);
+                mMoreBtn.setSelected(false);
+
+                tans.hide(mLocationFragment);
+                tans.hide(mTuangouFragment);
+                tans.show(mProfileFragment);
+                tans.hide(mMoreFragment);
+                break;
+
+            case R.id.more:
+                mCurrSelectedTabId = R.id.more;
+                mActionbar.setDisplayOptions(ActionBar.DISPLAY_SHOW_HOME);
+                mActionbar.setIcon(R.drawable.actionbar_main_page_icon);
+
+                mLocationBtn.setSelected(false);
+                mTuangouBtn.setSelected(false);
+                mProfileBtn.setSelected(false);
+                mMoreBtn.setSelected(true);
+
+                tans.hide(mLocationFragment);
+                tans.hide(mTuangouFragment);
+                tans.hide(mProfileFragment);
+                tans.show(mMoreFragment);
+                break;
+        }
+        tans.commitAllowingStateLoss();
+    }
 }

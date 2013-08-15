@@ -4,6 +4,7 @@ import android.app.ActionBar;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.MenuItem;
+import com.tugou.jgl.R;
 
 /**
  * Created with IntelliJ IDEA.
@@ -18,6 +19,8 @@ public class BaseActivity extends Activity {
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        this.getWindow().setBackgroundDrawableResource(R.drawable.transparent);
 
         init();
     }

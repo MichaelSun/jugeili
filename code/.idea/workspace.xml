@@ -5,6 +5,7 @@
       <profile>
         <option name="device" value="2.7in QVGA" />
         <option name="deviceConfiguration" value="Portrait" />
+        <option name="localeLanguage" value="ar" />
         <option name="targetHashString" value="android-17" />
         <option name="theme" value="AppTheme" />
       </profile>
@@ -30,17 +31,19 @@
     <file path="/fragment.java" changelist="53314564-34b9-4939-b1bd-95fa5d95cda2" time="1376385632285" ignored="false" />
     <file path="/JGLApplication.java" changelist="53314564-34b9-4939-b1bd-95fa5d95cda2" time="1376385665941" ignored="false" />
     <file path="/AndroidManifest.xml" changelist="53314564-34b9-4939-b1bd-95fa5d95cda2" time="1376550700166" ignored="false" />
-    <file path="/strings.xml" changelist="53314564-34b9-4939-b1bd-95fa5d95cda2" time="1376551213047" ignored="false" />
+    <file path="/strings.xml" changelist="53314564-34b9-4939-b1bd-95fa5d95cda2" time="1376555541886" ignored="false" />
     <file path="/styles.xml" changelist="53314564-34b9-4939-b1bd-95fa5d95cda2" time="1376549978667" ignored="false" />
-    <file path="/activity_jugeili.xml" changelist="53314564-34b9-4939-b1bd-95fa5d95cda2" time="1376550844240" ignored="false" />
+    <file path="/activity_jugeili.xml" changelist="53314564-34b9-4939-b1bd-95fa5d95cda2" time="1376555233810" ignored="false" />
     <file path="$PROJECT_DIR$/bin/AndroidManifest.xml" changelist="53314564-34b9-4939-b1bd-95fa5d95cda2" time="1376550862850" ignored="false" />
-    <file path="/JuGeiLiActivity.java" changelist="53314564-34b9-4939-b1bd-95fa5d95cda2" time="1376551104101" ignored="false" />
-    <file path="/BaseActivity.java" changelist="53314564-34b9-4939-b1bd-95fa5d95cda2" time="1376551694703" ignored="false" />
+    <file path="/JuGeiLiActivity.java" changelist="53314564-34b9-4939-b1bd-95fa5d95cda2" time="1376556614452" ignored="false" />
+    <file path="/BaseActivity.java" changelist="53314564-34b9-4939-b1bd-95fa5d95cda2" time="1376556301296" ignored="false" />
     <file path="/SubListActivity.java" changelist="53314564-34b9-4939-b1bd-95fa5d95cda2" time="1376552569907" ignored="false" />
-    <file path="$PROJECT_DIR$/gen/com/tugou/jgl/R.java" changelist="53314564-34b9-4939-b1bd-95fa5d95cda2" time="1376552114129" ignored="false" />
+    <file path="$PROJECT_DIR$/gen/com/tugou/jgl/R.java" changelist="53314564-34b9-4939-b1bd-95fa5d95cda2" time="1376556527154" ignored="false" />
     <file path="$PROJECT_DIR$/src_lib/mcuslib/gen/com/plugin/common/mucslib/R.java" changelist="53314564-34b9-4939-b1bd-95fa5d95cda2" time="1376552114129" ignored="false" />
-    <file path="/Dummy.txt" changelist="53314564-34b9-4939-b1bd-95fa5d95cda2" time="1376552406939" ignored="false" />
+    <file path="/Dummy.txt" changelist="53314564-34b9-4939-b1bd-95fa5d95cda2" time="1376556337836" ignored="false" />
     <file path="/sub_list_activity.xml" changelist="53314564-34b9-4939-b1bd-95fa5d95cda2" time="1376552867715" ignored="false" />
+    <file path="/LocationFrament.java" changelist="53314564-34b9-4939-b1bd-95fa5d95cda2" time="1376556513428" ignored="false" />
+    <file path="/location.xml" changelist="53314564-34b9-4939-b1bd-95fa5d95cda2" time="1376556393827" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,19 +104,44 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="JuGeiLiActivity.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="JuGeiLiActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/tugou/jgl/activity/JuGeiLiActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="13" selection-start="746" selection-end="746" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="64" column="21" selection-start="2097" selection-end="2097" vertical-scroll-proportion="0.48207173">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SubListActivity.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="LocationFrament.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/tugou/jgl/fragment/LocationFrament.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="21" column="53" selection-start="554" selection-end="554" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="location.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/layout/location.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="46" selection-start="428" selection-end="428" vertical-scroll-proportion="-6.5185184">
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SubListActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/tugou/jgl/activity/SubListActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="1" selection-start="535" selection-end="535" vertical-scroll-proportion="0.4249668">
+            <state line="17" column="32" selection-start="450" selection-end="450" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -134,7 +162,16 @@
       <file leaf-file-name="BaseActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/tugou/jgl/activity/BaseActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="53" selection-start="439" selection-end="439" vertical-scroll-proportion="0.0">
+            <state line="22" column="77" selection-start="586" selection-end="586" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="colors.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/values/colors.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="25" selection-start="590" selection-end="595" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -143,7 +180,7 @@
       <file leaf-file-name="activity_jugeili.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/layout/activity_jugeili.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="30" selection-start="634" selection-end="634" vertical-scroll-proportion="-8.888889">
+            <state line="11" column="47" selection-start="528" selection-end="528" vertical-scroll-proportion="-6.5185184">
               <folding />
             </state>
           </provider>
@@ -152,46 +189,19 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="main_page_tab_btn_bg.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/drawable/main_page_tab_btn_bg.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="47" selection-start="360" selection-end="360" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="strings.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="0" selection-start="216" selection-end="216" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="styles.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/values/styles.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="87" column="12" selection-start="4748" selection-end="4748" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="scrollbar_vertical_thumb.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/drawable/scrollbar_vertical_thumb.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="action_bar_btn_bg.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/color/action_bar_btn_bg.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="11" selection-start="224" selection-end="224" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="action_bar_btn_bg.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/drawable/action_bar_btn_bg.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="11" selection-start="268" selection-end="268" vertical-scroll-proportion="0.0">
+            <state line="19" column="22" selection-start="428" selection-end="428" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -211,13 +221,15 @@
         <option value="$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/UtilsConfig.java" />
         <option value="$PROJECT_DIR$/res/values/styles.xml" />
         <option value="$PROJECT_DIR$/res/values/colors.xml" />
-        <option value="$PROJECT_DIR$/res/layout/activity_jugeili.xml" />
-        <option value="$PROJECT_DIR$/src/com/tugou/jgl/activity/JuGeiLiActivity.java" />
-        <option value="$PROJECT_DIR$/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/src/com/tugou/jgl/activity/BaseActivity.java" />
         <option value="$PROJECT_DIR$/src/com/tugou/jgl/activity/SubListActivity.java" />
         <option value="$PROJECT_DIR$/res/layout/sub_list_activity.xml" />
+        <option value="$PROJECT_DIR$/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/res/layout/activity_jugeili.xml" />
+        <option value="$PROJECT_DIR$/src/com/tugou/jgl/activity/BaseActivity.java" />
+        <option value="$PROJECT_DIR$/res/layout/location.xml" />
+        <option value="$PROJECT_DIR$/src/com/tugou/jgl/fragment/LocationFrament.java" />
+        <option value="$PROJECT_DIR$/src/com/tugou/jgl/activity/JuGeiLiActivity.java" />
       </list>
     </option>
   </component>
@@ -269,6 +281,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="jgl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fragment" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -363,6 +397,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="layout" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="drawable" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -667,35 +719,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/tugou/jgl/app/JGLApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="27" selection-start="272" selection-end="286" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/UtilsConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="76" selection-start="719" selection-end="719" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src_lib/mcuslib/src/com/plugin/common/utils/UtilsRuntime.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="5" selection-start="817" selection-end="817" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/anim/zoom_out.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/values/colors.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="45" selection-start="662" selection-end="662" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/drawable/action_bar_btn_bg.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="11" selection-start="268" selection-end="268" vertical-scroll-proportion="0.0">
@@ -724,40 +747,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="216" selection-end="216" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="40" selection-start="441" selection-end="441" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tugou/jgl/activity/BaseActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="53" selection-start="439" selection-end="439" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/activity_jugeili.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="30" selection-start="634" selection-end="634" vertical-scroll-proportion="-8.888889">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tugou/jgl/activity/JuGeiLiActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="13" selection-start="746" selection-end="746" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -774,8 +766,81 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/tugou/jgl/activity/SubListActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="1" selection-start="535" selection-end="535" vertical-scroll-proportion="0.4249668">
+        <state line="17" column="32" selection-start="450" selection-end="450" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/mybackup/software/android-sdk-mac_x86/sources/android-17/android/app/ActionBar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="123" column="28" selection-start="5372" selection-end="5372" vertical-scroll-proportion="0.33333334">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="22" selection-start="428" selection-end="428" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/drawable/main_page_tab_btn_bg.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="47" selection-start="360" selection-end="360" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/values/colors.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="25" selection-start="590" selection-end="595" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/activity_jugeili.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="47" selection-start="528" selection-end="528" vertical-scroll-proportion="-6.5185184">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tugou/jgl/activity/BaseActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="77" selection-start="586" selection-end="586" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/location.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="46" selection-start="428" selection-end="428" vertical-scroll-proportion="-6.5185184">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tugou/jgl/fragment/LocationFrament.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="53" selection-start="554" selection-end="554" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tugou/jgl/activity/JuGeiLiActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="64" column="21" selection-start="2097" selection-end="2097" vertical-scroll-proportion="0.48207173">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
