@@ -98,4 +98,8 @@
     <!-- notification item -->
     <color name="notification_item_bg">#b5d335</color>
     
+    <!-- location page color -->
+    <color name="category_text_color">#969993</color>
+    <color name="category_background_color">#fafafa</color>
+    
 </resources>
