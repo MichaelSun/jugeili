@@ -7,10 +7,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-import android.widget.GridView;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.widget.*;
 
 import com.tugou.jgl.R;
 import com.tugou.jgl.activity.SubListActivity;
@@ -47,6 +44,15 @@ public class LocationFrament extends Fragment {
 //        });
         GridView gv = (GridView)ret.findViewById(R.id.category);
         gv.setAdapter(new CategoryAdapter());
+
+        gv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent i = new Intent();
+                i.setClass(getActivity().getApplicationContext(), SubListActivity.class);
+                getActivity().startActivity(i);
+            }
+        });
 
         return ret;
     }
@@ -104,7 +110,7 @@ public class LocationFrament extends Fragment {
 			
 			holder.icon.setImageResource(imgs[position]);
 			holder.name.setText(names[position]);
-			
+
 			return convertView;
 		}
 		

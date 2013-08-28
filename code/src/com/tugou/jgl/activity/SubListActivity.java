@@ -3,6 +3,7 @@ package com.tugou.jgl.activity;
 import android.app.Activity;
 import android.os.Bundle;
 import com.tugou.jgl.R;
+import com.tugou.jgl.fragment.SubListFragment;
 
 /**
  * Created with IntelliJ IDEA.
@@ -18,6 +19,8 @@ public class SubListActivity extends BaseActivity {
         this.setContentView(R.layout.sub_list_activity);
 
         mActionbar.setTitle(R.string.movie_title);
+
+        fragmentUpdate(R.id.sub_fl, new SubListFragment());
     }
 
 }
