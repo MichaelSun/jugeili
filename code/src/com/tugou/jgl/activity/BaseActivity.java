@@ -1,7 +1,6 @@
 package com.tugou.jgl.activity;
 
-import android.app.ActionBar;
-import android.app.Activity;
+import android.app.*;
 import android.os.Bundle;
 import android.view.MenuItem;
 import com.tugou.jgl.R;
@@ -17,6 +16,8 @@ public class BaseActivity extends Activity {
 
     protected ActionBar mActionbar;
 
+    protected Fragment mPageFragment;
+
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
@@ -30,6 +31,15 @@ public class BaseActivity extends Activity {
         mActionbar.setDisplayHomeAsUpEnabled(true);
         mActionbar.setDisplayShowTitleEnabled(true);
         mActionbar.setDisplayShowHomeEnabled(true);
+    }
+
+    protected void fragmentUpdate(int id, Fragment fragment) {
+        if (fragment != null) {
+            FragmentManager manager = this.getFragmentManager();
+            FragmentTransaction transaction = manager.beginTransaction();
+            transaction.replace(id, fragment);
+            transaction.commit();
+        }
     }
 
     @Override

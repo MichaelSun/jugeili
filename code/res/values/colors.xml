@@ -12,6 +12,15 @@
     <color name="gray7">#DEDEDE</color>
     <color name="gray8">#c3c3c1</color>
 
+    <!-- list item color info -->
+    <drawable name="default_cover">#ced0d1</drawable>
+    <color name="sublist_title_color">#333333</color>
+    <color name="sublist_description_color">#969993</color>
+    <color name="sublist_count_color">#45a6c5</color>
+    <color name="sublist_origin_count_color">#c0c2be</color>
+    <color name="sublist_dest_color">#c0c2be</color>
+    <color name="sublist_divider_color">#f0f0f0</color>
+
     <!-- 默认的EditText中光标的提示颜色 -->
     <drawable name="edit_highlight">#8622ab</drawable>
     
@@ -25,7 +34,6 @@
     <color name="main_page_chat_item_bg_pressed_color">#f2f2f2</color>
     <color name="broadcast_area_controller_bg_pressed_color">#0c000000</color>
     
-
     <!-- setting -->
     <color name="setting_clickable_item_bg_pressed_color">#f8f8f8</color>
     
