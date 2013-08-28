@@ -10,6 +10,7 @@ import android.view.Menu;
 import android.view.View;
 import com.tugou.jgl.R;
 import com.tugou.jgl.fragment.LocationFrament;
+import com.tugou.jgl.fragment.MyFragment;
 
 public class JuGeiLiActivity extends BaseActivity {
 
@@ -104,7 +105,7 @@ public class JuGeiLiActivity extends BaseActivity {
 
         mProfileFragment = mFragmentManager.findFragmentByTag(TAG_PROFILE_FRAGMENT);
         if (mProfileFragment == null) {
-            mProfileFragment = new LocationFrament();
+            mProfileFragment = new MyFragment();
 
             FragmentTransaction trans = mFragmentManager.beginTransaction();
             trans.add(R.id.fragment_container, mProfileFragment, TAG_PROFILE_FRAGMENT);

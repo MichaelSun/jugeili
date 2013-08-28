@@ -28,5 +28,6 @@
     <string name="hotel">酒店</string>
     <string name="rewards">积分</string>
     <string name="phone">手机</string>
-
+    <string name="balance">账户余额：</string>
+    <string name="yuan">元</string>
 </resources>

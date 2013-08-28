@@ -102,4 +102,8 @@
     <color name="category_text_color">#969993</color>
     <color name="category_background_color">#fafafa</color>
     
+    <!-- My page color -->
+    <color name="text_color_0">#222222</color>
+    <color name="text_color_1">#cedede</color>
+    
 </resources>

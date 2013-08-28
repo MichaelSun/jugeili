@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+    xmlns:tools="http://schemas.android.com/tools" 
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    android:orientation="vertical"
+    android:background="@color/category_background_color">
+    
+    <RelativeLayout 
+        android:id="@+id/layout_top"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        >
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp">
+            
+            <TextView 
+                android:id="@+id/nickname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:text="露菲尔公主"
+                android:textColor="@color/text_color_0"
+                android:textSize="20dp"/>
+            <TextView
+                android:id="@+id/balance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/nickname"
+                android:layout_alignLeft="@id/nickname"
+                android:text="@string/balance"
+                android:textColor="@color/text_color_1"
+                android:textSize="16dp"/>
+            <TextView
+                android:id="@+id/balance_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/balance"
+                android:layout_alignTop="@id/balance"
+                android:text="128"
+                android:textColor="@color/text_color_1"
+                android:textSize="16dp"/>
+            <TextView
+                android:id="@+id/unit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/balance_value"
+                android:layout_alignTop="@id/balance"
+                android:text="@string/yuan"
+                android:textColor="@color/text_color_1"
+                android:textSize="16dp"/>
+                "
+        </RelativeLayout>
+            "
+    </RelativeLayout>
+
+</LinearLayout>
