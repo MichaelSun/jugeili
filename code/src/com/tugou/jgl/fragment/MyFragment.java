@@ -3,7 +3,7 @@ package com.tugou.jgl.fragment;
 import com.tugou.jgl.R;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,7 +19,7 @@ public class MyFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
         //mInflater = inflater;
-        View ret = inflater.inflate(R.layout.location, null);
+        View ret = inflater.inflate(R.layout.my, null);
 
         //test
 //        ret.findViewById(R.id.test).setOnClickListener(new View.OnClickListener() {

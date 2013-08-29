@@ -9,16 +9,6 @@
 
     <!-- 周边 -->
     <string name="location_title">周边</string>
-
-    <!-- 团购 -->
-    <string name="tuangou_title">团购</string>
-
-    <!-- 我的 -->
-    <string name="profile_title">我的</string>
-
-    <!-- 更多 -->
-    <string name="more_title">更多</string>
-    
     <string name="new_book">新单</string>
     <string name="food">美食</string>
     <string name="play">娱乐</string>
@@ -29,4 +19,24 @@
     <string name="rewards">积分</string>
     <string name="phone">手机</string>
 
+    <!-- 团购 -->
+    <string name="tuangou_title">团购</string>
+
+    <!-- 我的 -->
+    <string name="profile_title">我的</string>
+    <string name="balance">账户余额：</string>
+    <string name="yuan">元</string>
+    <string name="my_ticket">我的给力券</string>
+    <string name="my_profile">我的信息</string>
+    <string name="everyday_rec">每日推荐</string>
+    <string name="unpay">待付款订单</string>
+    <string name="payed">已付款订单</string>
+    <string name="lucky">抽奖单</string>
+    <string name="coupon">代金券</string>
+    
+    <!-- 更多 -->
+    <string name="more_title">更多</string>
+    
+
+    
 </resources>
