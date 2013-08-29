@@ -12,20 +12,18 @@
         android:layout_height="wrap_content"
         android:text="test"
         android:layout_centerHorizontal="true"/-->
-    
-    <TextView 
-        android:id="@+id/ad"
-        android:layout_width="fill_parent"
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/cover"
+        android:layout_width="match_parent"
         android:layout_height="157dp"
-        android:layout_alignParentTop="true"
-        android:background="#000000"
-        android:text="111111111111111111111111111111111111111111111111"/>
+        android:layout_alignParentTop="true"/>
     
     <GridView
         android:id="@+id/category"
         android:layout_width= "wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/ad"
+        android:layout_below="@id/cover"
         android:layout_alignParentBottom="true"
         android:numColumns="3"
         android:verticalSpacing="22dp"

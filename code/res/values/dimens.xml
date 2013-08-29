@@ -10,5 +10,7 @@
     <dimen name="sublist_count_size">22sp</dimen>
     <dimen name="sublist_origin_count_size">13sp</dimen>
     <dimen name="sublist_dest_size">13sp</dimen>
+    <dimen name="sublist_bottom_location_size">13sp</dimen>
+    <dimen name="sublist_top_size">15sp</dimen>
 
 </resources>

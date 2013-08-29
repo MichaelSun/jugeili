@@ -20,6 +20,8 @@
     <color name="sublist_origin_count_color">#c0c2be</color>
     <color name="sublist_dest_color">#c0c2be</color>
     <color name="sublist_divider_color">#f0f0f0</color>
+    <color name="sublist_bottom_location_color">#dddddd</color>
+    <color name="sublist_top_color">#222222</color>
 
     <!-- 默认的EditText中光标的提示颜色 -->
     <drawable name="edit_highlight">#8622ab</drawable>
