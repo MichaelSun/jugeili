@@ -113,5 +113,7 @@
     <!-- My page color -->
     <color name="text_color_0">#222222</color>
     <color name="text_color_1">#cedede</color>
+    <color name="text_color_2">#333333</color>
+    <color name="text_color_3">#71736e</color>
     
 </resources>
