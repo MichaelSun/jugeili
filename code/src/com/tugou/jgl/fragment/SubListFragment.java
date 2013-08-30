@@ -12,6 +12,8 @@ import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.tugou.jgl.R;
 import com.tugou.jgl.adapter.SubListAdater;
+import com.tugou.jgl.popupmenu.RRMenuItem;
+import com.tugou.jgl.popupmenu.RRPopupMenu;
 
 /**
  * Created with IntelliJ IDEA.
@@ -24,6 +26,8 @@ public class SubListFragment extends Fragment {
 
     private PullToRefreshListView mPullToRefreshListView;
     private ListView mlistView;
+
+    private RRPopupMenu mPopupMenu;
 
     private static final int SET_LIST = 1;
     private Handler mHandler = new Handler() {
@@ -63,7 +67,27 @@ public class SubListFragment extends Fragment {
 
         mHandler.sendEmptyMessage(SET_LIST);
 
+        initPopupMenu();
+        initUIView(view);
+
         return view;
+    }
+
+    private void initPopupMenu() {
+        mPopupMenu = new RRPopupMenu(getActivity().getApplicationContext(), RRPopupMenu.RRMenuType.DROPDOWN);
+        mPopupMenu.addItem(new RRMenuItem(getActivity().getApplicationContext(), 1000, "全部", RRMenuItem.RRMenuItemStyle.STYLE_NORMAL));
+        mPopupMenu.addItem(new RRMenuItem(getActivity().getApplicationContext(), 1001, "热门", RRMenuItem.RRMenuItemStyle.STYLE_NORMAL));
+    }
+
+    private void initUIView(View root) {
+        final View cate = root.findViewById(R.id.category);
+        cate.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                mPopupMenu.show(cate);
+            }
+        });
     }
 
 }

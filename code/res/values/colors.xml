@@ -23,6 +23,10 @@
     <color name="sublist_bottom_location_color">#dddddd</color>
     <color name="sublist_top_color">#222222</color>
 
+    <!-- popup menu -->
+    <drawable name="popup_menu_item_normal_bg">#F3F3F3</drawable>
+    <drawable name="popup_menu_item_pressed_bg">#CB553B</drawable>
+
     <!-- 默认的EditText中光标的提示颜色 -->
     <drawable name="edit_highlight">#8622ab</drawable>
     
