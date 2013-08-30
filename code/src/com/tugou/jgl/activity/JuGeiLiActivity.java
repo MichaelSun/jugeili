@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import com.tugou.jgl.R;
+import com.tugou.jgl.fragment.GroupOnFragment;
 import com.tugou.jgl.fragment.LocationFrament;
 import com.tugou.jgl.fragment.MyFragment;
 
@@ -96,7 +97,8 @@ public class JuGeiLiActivity extends BaseActivity {
 
         mTuangouFragment = mFragmentManager.findFragmentByTag(TAG_CONTACT_FRAGMENT);
         if (mTuangouFragment == null) {
-            mTuangouFragment = new LocationFrament();
+            //mTuangouFragment = new GroupOnFragment();
+            mTuangouFragment = new GroupOnFragment();
 
             FragmentTransaction trans = mFragmentManager.beginTransaction();
             trans.add(R.id.fragment_container, mTuangouFragment, TAG_CONTACT_FRAGMENT);
