@@ -11,14 +11,14 @@
         android:id="@+id/cover"
         android:layout_width="140dp"
         android:layout_height="90dp"
-        android:padding="2dp"
+        android:padding="3dp"
         android:src="@drawable/default_cover"
         android:scaleType="centerCrop"
         android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
         android:layout_marginTop="8dp"
         android:layout_marginRight="12dp"
-        android:background="@color/white"/>
+        android:background="@drawable/cover_background"/>
 
     <ImageView
         android:id="@+id/free_tips"
