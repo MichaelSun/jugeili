@@ -18,3 +18,15 @@ local.properties
 # Eclipse project files
 .classpath
 .project
+
+#ios ignore
+.DS_Store
+*.tmp
+*.swp
+.*
+*.bak
+.svn*
+*.xcuserdatad*
+xcuserdata
+project.xcworkspace
+
