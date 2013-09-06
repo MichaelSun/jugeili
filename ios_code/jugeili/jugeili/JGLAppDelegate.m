@@ -7,12 +7,24 @@
 //
 
 #import "JGLAppDelegate.h"
+#import "JGLSubListViewController.h"
+#import "JGLFirstViewController.h"
 
 @implementation JGLAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    UITabBarController *tab = [UITabBarController new];
+    
+    JGLFirstViewController *first = [JGLFirstViewController new];
+    UINavigationController *navFirst = [[UINavigationController alloc] initWithRootViewController:first];
+    
+    JGLSubListViewController *list = [JGLSubListViewController new];
+    UINavigationController *naviList = [[UINavigationController alloc] initWithRootViewController:list];
+    
+    tab.viewControllers = @[navFirst, naviList];
+    self.window.rootViewController = tab;
     return YES;
 }
 							
