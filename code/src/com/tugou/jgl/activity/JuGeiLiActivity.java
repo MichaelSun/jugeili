@@ -8,6 +8,8 @@ import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 import com.tugou.jgl.R;
 import com.tugou.jgl.fragment.GroupOnFragment;
 import com.tugou.jgl.fragment.LocationFrament;
@@ -34,6 +36,16 @@ public class JuGeiLiActivity extends BaseActivity {
     private View mProfileBtn;
     private View mMoreBtn;
 
+    private ImageView mLocationImage;
+    private ImageView mTuangouImage;
+    private ImageView mProfileImage;
+    private ImageView mMoreImage;
+
+    private TextView mLocationTV;
+    private TextView mTuangouTV;
+    private TextView mProfileTV;
+    private TextView mMoreTV;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,12 +55,12 @@ public class JuGeiLiActivity extends BaseActivity {
         initUI();
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.ju_gei_li, menu);
-        return true;
-    }
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        // Inflate the menu; this adds items to the action bar if it is present.
+//        getMenuInflater().inflate(R.menu.ju_gei_li, menu);
+//        return true;
+//    }
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
@@ -74,7 +86,53 @@ public class JuGeiLiActivity extends BaseActivity {
         mProfileBtn.setOnClickListener(tabClickListener);
         mMoreBtn.setOnClickListener(tabClickListener);
 
+        mLocationImage = (ImageView) findViewById(R.id.location_img);
+        mLocationTV = (TextView) findViewById(R.id.location_text);
+        mTuangouImage = (ImageView) findViewById(R.id.tuangou_img);
+        mTuangouTV = (TextView) findViewById(R.id.tuangou_text);
+        mProfileImage = (ImageView) findViewById(R.id.profile_img);
+        mProfileTV = (TextView) findViewById(R.id.profile_text);
+        mMoreImage = (ImageView) findViewById(R.id.more_img);
+        mMoreTV = (TextView) findViewById(R.id.more_text);
+
         switchToTab(mCurrSelectedTabId);
+    }
+
+    private void updateBottomSelected(int index) {
+        mLocationImage.setImageResource(R.drawable.location);
+        mTuangouImage.setImageResource(R.drawable.tuangou);
+        mProfileImage.setImageResource(R.drawable.profile);
+        mMoreImage.setImageResource(R.drawable.more);
+
+        mLocationTV.setTextColor(getResources().getColor(R.color.bottom_normal_color));
+        mTuangouTV.setTextColor(getResources().getColor(R.color.bottom_normal_color));
+        mProfileTV.setTextColor(getResources().getColor(R.color.bottom_normal_color));
+        mMoreTV.setTextColor(getResources().getColor(R.color.bottom_normal_color));
+
+        ImageView imageSet = null;
+        TextView textSet = null;
+        switch (index) {
+            case R.id.location:
+                imageSet = mLocationImage;
+                textSet = mLocationTV;
+                break;
+            case R.id.tuangou:
+                imageSet = mTuangouImage;
+                textSet = mTuangouTV;
+                break;
+            case R.id.profile:
+                imageSet = mProfileImage;
+                textSet = mProfileTV;
+                break;
+            case R.id.more:
+                imageSet = mMoreImage;
+                textSet = mMoreTV;
+                break;
+        }
+        if (textSet != null && imageSet != null) {
+            imageSet.setImageResource(R.drawable.location_press);
+            textSet.setTextColor(getResources().getColor(R.color.bottom_pressed_color));
+        }
     }
 
     private void initData(Bundle savedInstanceState) {
@@ -193,6 +251,8 @@ public class JuGeiLiActivity extends BaseActivity {
                 tans.show(mMoreFragment);
                 break;
         }
+        updateBottomSelected(tabId);
+
         tans.commitAllowingStateLoss();
     }
 }

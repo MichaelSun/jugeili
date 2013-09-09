@@ -23,6 +23,9 @@
     <color name="sublist_bottom_location_color">#dddddd</color>
     <color name="sublist_top_color">#222222</color>
 
+    <color name="bottom_pressed_color">#84ae4c</color>
+    <color name="bottom_normal_color">#6d737b</color>
+
     <!-- popup menu -->
     <drawable name="popup_menu_item_normal_bg">#F3F3F3</drawable>
     <drawable name="popup_menu_item_pressed_bg">#CB553B</drawable>
