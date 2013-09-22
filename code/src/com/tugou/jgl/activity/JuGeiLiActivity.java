@@ -5,6 +5,7 @@ import android.app.ActionBar;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
@@ -162,19 +163,24 @@ public class JuGeiLiActivity extends BaseActivity {
                 break;
 
             case R.id.profile:
-                mCurrSelectedTabId = R.id.profile;
-                mActionbar.setDisplayOptions(ActionBar.DISPLAY_SHOW_TITLE);
-                mActionbar.setTitle(R.string.profile_title);
-
-                mLocationBtn.setSelected(false);
-                mTuangouBtn.setSelected(false);
-                mProfileBtn.setSelected(true);
-                mMoreBtn.setSelected(false);
-
-                tans.hide(mLocationFragment);
-                tans.hide(mTuangouFragment);
-                tans.show(mProfileFragment);
-                tans.hide(mMoreFragment);
+//                mCurrSelectedTabId = R.id.profile;
+//                mActionbar.setDisplayOptions(ActionBar.DISPLAY_SHOW_TITLE);
+//                mActionbar.setTitle(R.string.profile_title);
+//
+//                mLocationBtn.setSelected(false);
+//                mTuangouBtn.setSelected(false);
+//                mProfileBtn.setSelected(true);
+//                mMoreBtn.setSelected(false);
+//
+//                tans.hide(mLocationFragment);
+//                tans.hide(mTuangouFragment);
+//                tans.show(mProfileFragment);
+//                tans.hide(mMoreFragment);
+                
+				Intent intent = new Intent();
+				intent.setClass(JuGeiLiActivity.this, LoginActivity.class);
+				startActivity(intent);
+				
                 break;
 
             case R.id.more:

@@ -86,5 +86,9 @@
     <style name="WelcomeTheme" parent="@style/HoloNoActionBar">
         <item name="android:windowBackground">@null</item>
     </style>
+    
+    <style name="register_style_edittext" >
+        <item name="android:background" >@drawable/edit_text_selecter_1</item>
+    </style>
 
 </resources>

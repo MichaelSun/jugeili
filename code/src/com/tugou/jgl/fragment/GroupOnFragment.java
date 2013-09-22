@@ -3,14 +3,17 @@ package com.tugou.jgl.fragment;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.tugou.jgl.R;
+import com.tugou.jgl.activity.LoginActivity;
 import com.tugou.jgl.adapter.SubListAdater;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
@@ -55,6 +58,18 @@ public class GroupOnFragment extends Fragment {
         });
 
         mHandler.sendEmptyMessage(SET_LIST);
+        
+//        mPullToRefreshListView.setOnClickListener(new OnClickListener(){
+//
+//			@Override
+//			public void onClick(View v) {
+//				Intent intent = new Intent();
+//				intent.setClass(null, LoginActivity.class);
+//				startActivity(intent);
+//				
+//			}
+//        	
+//        });
 
         return view;
     }
