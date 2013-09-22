@@ -7,9 +7,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+import android.view.*;
 import android.widget.*;
 
 import com.plugin.common.view.WebImageView;
@@ -64,6 +62,11 @@ public class LocationFrament extends Fragment {
         initCover(ret);
 
         return ret;
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+
     }
 
     private void initCover(View root) {
