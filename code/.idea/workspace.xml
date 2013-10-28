@@ -141,7 +141,7 @@
       <file leaf-file-name="GetListGroupRequest.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/tugou/jgl/api/GetListGroupRequest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="0" selection-start="1101" selection-end="1101" vertical-scroll-proportion="0.70119524">
+            <state line="18" column="26" selection-start="600" selection-end="600" vertical-scroll-proportion="0.3187251">
               <folding />
             </state>
           </provider>
@@ -1259,7 +1259,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/tugou/jgl/api/GetListGroupRequest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="0" selection-start="1101" selection-end="1101" vertical-scroll-proportion="0.70119524">
+        <state line="18" column="26" selection-start="600" selection-end="600" vertical-scroll-proportion="0.3187251">
           <folding />
         </state>
       </provider>
