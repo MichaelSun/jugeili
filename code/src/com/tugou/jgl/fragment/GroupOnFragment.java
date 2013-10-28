@@ -2,9 +2,17 @@ package com.tugou.jgl.fragment;
 
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
+import com.plugin.common.utils.CustomThreadPool;
+import com.plugin.common.utils.CustomThreadPool.TaskWrapper;
+import com.plugin.internet.InternetUtils;
 import com.tugou.jgl.R;
 import com.tugou.jgl.activity.LoginActivity;
+import com.tugou.jgl.adapter.GrouponListAdapter;
 import com.tugou.jgl.adapter.SubListAdater;
+import com.tugou.jgl.api.GetListGroupRequest;
+import com.tugou.jgl.api.GetListGroupResponse;
+import com.tugou.jgl.api.GetListGroupResponse.GroupInfo;
+import com.tugou.jgl.utils.Constant;
 
 import android.app.Fragment;
 import android.content.Intent;
@@ -20,6 +28,7 @@ import android.widget.ListView;
 public class GroupOnFragment extends Fragment {
     private PullToRefreshListView mPullToRefreshListView;
     private ListView mlistView;
+    private GroupInfo[] groupInfo;
 
     private static final int SET_LIST = 1;
     private Handler mHandler = new Handler() {
@@ -27,7 +36,7 @@ public class GroupOnFragment extends Fragment {
         public void handleMessage(Message msg) {
             switch (msg.what) {
                 case SET_LIST:
-                    mlistView.setAdapter(new SubListAdater(getActivity().getLayoutInflater()));
+                    mlistView.setAdapter(new GrouponListAdapter(getActivity().getLayoutInflater(), groupInfo));
                     break;
             }
         }
@@ -57,7 +66,9 @@ public class GroupOnFragment extends Fragment {
             }
         });
 
-        mHandler.sendEmptyMessage(SET_LIST);
+        //mHandler.sendEmptyMessage(SET_LIST);
+        getListGroup();
+        
         
 //        mPullToRefreshListView.setOnClickListener(new OnClickListener(){
 //
@@ -73,4 +84,31 @@ public class GroupOnFragment extends Fragment {
 
         return view;
     }
+    
+    private void getListGroup() {
+        CustomThreadPool.getInstance().excute(new TaskWrapper(new Runnable() {
+            @Override
+            public void run() {
+                try {
+					final GetListGroupResponse response = InternetUtils.request( 
+							GroupOnFragment.this.getActivity().getApplicationContext(), new GetListGroupRequest(Constant.CATEGORY_ALL, 
+									Constant.AREA_ALL, 
+									Constant.ORDER_DEFAULT, 
+									Constant.CITY_SHANGHAI, 
+									Constant.IS_NO_ORDER_CLOSE, 
+									Constant.IS_HOLIDAY_CAN_USE_CLOSE));
+                    if (response != null) {
+//                    	if(response.result.groupInfo.length != 0){
+//                    		groupInfo = response.result.groupInfo
+//                    	}
+                    	groupInfo = response.result.groupInfo;
+                    	mHandler.sendEmptyMessage(SET_LIST);
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }));
+    }
+    
 }
