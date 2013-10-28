@@ -138,7 +138,7 @@ class BeanRequestDefaultImplInternal implements BeanRequestInterface {
             }
 
             UtilsConfig.LOGD("\n\n//***\n| [[request::" + request + "]] \n" + "| RestAPI URL = " + api_url
-                    + "\n| after getSig bundle params is = \n" + param + " \n\\\\***\n");
+                    + "\n| bundle params is = \n" + param + " \n\\\\***\n");
         }
 
         int size = 0;

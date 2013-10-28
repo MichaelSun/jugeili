@@ -3,8 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/JGL.iml" filepath="$PROJECT_DIR$/JGL.iml" />
-      <module fileurl="file://$PROJECT_DIR$/JGLCusLib.iml" filepath="$PROJECT_DIR$/JGLCusLib.iml" />
-      <module fileurl="file://$PROJECT_DIR$/pull2refresh.iml" filepath="$PROJECT_DIR$/pull2refresh.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src_lib/mcuslib/JGLCusLib.iml" filepath="$PROJECT_DIR$/src_lib/mcuslib/JGLCusLib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src_lib/library/pull2refresh.iml" filepath="$PROJECT_DIR$/src_lib/library/pull2refresh.iml" />
     </modules>
   </component>
 </project>

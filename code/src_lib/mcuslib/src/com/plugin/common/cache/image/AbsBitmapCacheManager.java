@@ -26,7 +26,7 @@ abstract class AbsBitmapCacheManager implements ICacheManager<Bitmap> {
 	
 	private static final String TAG = "AbsBitmapCacheManager";
 
-    protected static final boolean DEBUG = true && UtilsConfig.UTILS_DEBUG;
+    protected static final boolean DEBUG = false && UtilsConfig.UTILS_DEBUG;
 
     protected final boolean ENABLE_BITMAP_REUSE;
     
