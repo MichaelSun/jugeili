@@ -101,7 +101,7 @@ public class GroupOnFragment extends Fragment {
 //                    	if(response.result.groupInfo.length != 0){
 //                    		groupInfo = response.result.groupInfo
 //                    	}
-                    	groupInfo = response.result.groupInfo;
+                    	groupInfo = response.groupInfo;
                     	mHandler.sendEmptyMessage(SET_LIST);
                     }
                 } catch (Exception e) {

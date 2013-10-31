@@ -3,8 +3,9 @@ package com.tugou.jgl.api;
 import com.plugin.internet.core.ResponseBase;
 import com.plugin.internet.core.json.JsonCreator;
 import com.plugin.internet.core.json.JsonProperty;
+import com.tugou.jgl.api.GetListGroupResponse.GroupInfo;
 
-public class GetListGroupResponse extends ResponseBase {
+public class GetCategoryResponse extends ResponseBase {
 	public static final class GroupInfo {
 		public String cover;
 		public String name;
@@ -32,22 +33,11 @@ public class GetListGroupResponse extends ResponseBase {
 			this.is_new = is_new;
 		}
 	}
-	
-//	public static final class Result{
-//		public GroupInfo[] groupInfo ;
-//		
-//		@JsonCreator
-//        public Result(
-//                @JsonProperty("GroupInfo") GroupInfo[] groupInfo){
-//			this.groupInfo  = groupInfo;
-//		}
-//	}
-	
-//	public Result result;
+
 	public GroupInfo[] groupInfo ;
 	
     @JsonCreator
-    public GetListGroupResponse(
+    public GetCategoryResponse(
             @JsonProperty("result") GroupInfo[] result) {
         this.groupInfo = result;
     }
