@@ -20,4 +20,8 @@ public class Constant {
     //groupon is holiday can use
     public static int IS_HOLIDAY_CAN_USE_CLOSE = 0;
     public static int IS_HOLIDAY_CAN_USE_OPEN = 1;
+    
+    //groupon is new
+    public static int IS_NEW = 0;
+    public static int IS_NOT_NEW = 1;
 }

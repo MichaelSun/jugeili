@@ -21,6 +21,8 @@
 
     <!-- 团购 -->
     <string name="tuangou_title">团购</string>
+    <string name="tuangou_yuan">元</string>
+    <string name="tuangou_ren">人</string>
 
     <!-- 我的 -->
     <string name="profile_title">我的</string>
