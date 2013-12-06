@@ -24,4 +24,8 @@ public class Constant {
     //groupon is new
     public static int IS_NEW = 0;
     public static int IS_NOT_NEW = 1;
+    
+  //groupon is new
+    public static int NEED_ORDER = 0;
+    public static int NOT_NEED_ORDER = 1;
 }

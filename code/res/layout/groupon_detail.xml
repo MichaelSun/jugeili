@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:background="@color/category_background_color">
+    <ScrollView 
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        >
+        
+    <RelativeLayout 
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        >
+    <ImageView 
+	    android:id="@+id/cover"
+	    android:layout_width="fill_parent"
+	    android:layout_height="436dp"/>
+    
+    <ImageView
+	    android:id="@+id/free_tips"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:src="@drawable/free_tips"
+	    android:layout_alignTop="@id/cover"
+	    android:layout_alignLeft="@id/cover"/>
+    
+    <RelativeLayout 
+        android:id="@+id/layout_cover"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:layout_below="@id/cover">
+    	    
+	    <TextView 
+	        android:id="@+id/tv_price"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@id/cover"
+	        android:layout_marginLeft="18dp"
+	        android:layout_centerVertical="true"
+	        android:textColor="@color/sublist_count_color"
+	        android:textSize="36dp"
+	        android:text="38"/>
+	    
+	    <TextView 
+	        android:id="@+id/tv_yuan"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_toRightOf="@id/tv_price"
+	        android:layout_alignBottom="@id/tv_price"
+	        android:textColor="@color/sublist_count_color"
+	        android:textSize="18dp"
+	        android:text="@string/yuan"/>
+	    
+	    <Button 
+	        android:id="@+id/get_button"
+	        android:layout_width="60dp"
+	        android:layout_height="36dp"
+	        android:layout_alignParentRight="true"
+	        android:layout_centerVertical="true"
+	        android:layout_marginRight="10dp"
+	        android:background="@drawable/detail_btn_n"
+	        android:text="@string/buy"
+	        android:textSize="16dp"
+	        android:textColor="@color/white"/>   
+    </RelativeLayout>
+    
+    <TextView 
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout_cover"
+        android:layout_marginTop="14dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginRight="18dp"
+        android:textColor="@color/gray4"
+        android:textSize="18dp"
+        android:text="莱利电玩城"/>
+    
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title"
+        android:layout_alignLeft="@id/title"
+        android:textColor="@color/sublist_description_color"    
+        android:textSize="15dp"
+        android:text="游戏币100个，无需预约，尽情玩游戏！先到先得，抢完为止！"/>
+    
+    <RelativeLayout 
+        android:id="@+id/grade"
+        android:layout_width="fill_parent"
+        android:layout_height="45dp"
+        android:layout_below="@id/description"
+        android:layout_marginTop="6dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp"
+        android:background="@drawable/my_tab_above">
+        
+        <ImageView 
+            android:id="@+id/star_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="11dp"
+            android:background="@drawable/detail_star_gray"/>
+        
+        <ImageView 
+            android:id="@+id/star_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/star_1"
+            android:layout_marginLeft="2dp"
+            android:background="@drawable/detail_star_gray"/>
+        
+        <ImageView 
+            android:id="@+id/star_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/star_2"
+            android:layout_marginLeft="2dp"
+            android:background="@drawable/detail_star_gray"/>
+        
+        <ImageView 
+            android:id="@+id/star_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/star_3"
+            android:layout_marginLeft="2dp"
+            android:background="@drawable/detail_star_gray"/>
+        
+        <ImageView 
+            android:id="@+id/star_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/star_4"
+            android:layout_marginLeft="2dp"
+            android:background="@drawable/detail_star_gray"/>
+        
+        <TextView 
+            android:id="@+id/grade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/star_5"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/detail_text_color_1"    
+            android:textSize="15dp"
+            android:text="4.9"/>
+        
+        <TextView 
+            android:id="@+id/grade_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/grade"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/detail_text_color_1"    
+            android:textSize="15dp"
+            android:text="152人评分"/>
+        
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="11dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/arrow_right"/>   
+    </RelativeLayout>
+    
+    <RelativeLayout 
+        android:id="@+id/bought"
+        android:layout_width="fill_parent"
+        android:layout_height="45dp"
+        android:layout_below="@id/grade"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp"
+        android:background="@drawable/my_tab_center">
+        
+        <ImageView 
+            android:id="@+id/imageview_people"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="11dp"
+            android:background="@drawable/my_icon6"/>
+        
+        <TextView 
+            android:id="@+id/textview_bought_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/imageview_people"
+            android:layout_centerVertical="true"
+            android:textColor="@color/gray4"
+            android:textSize="15dp"
+            android:text="@string/buy_num"/>
+        
+        <ImageView 
+            android:id="@+id/imageview_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/textview_bought_num"
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/my_icon7"/>
+        
+        <TextView 
+            android:id="@+id/textview_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/imageview_time"
+            android:layout_centerVertical="true"
+            android:textColor="@color/gray4"
+            android:textSize="15dp"
+            android:text="76天8小时48分"/>
+        
+    </RelativeLayout>
+    
+    <RelativeLayout 
+        android:id="@+id/merchant"
+        android:layout_width="fill_parent"
+        android:layout_height="45dp"
+        android:layout_below="@id/bought"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp"
+        android:background="@drawable/my_tab_above">
+        
+        <TextView 
+            android:id="@+id/tv_merchant_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="11dp"
+            android:text="@string/merchant_info"
+            android:textSize="15dp"
+            android:textColor="@color/gray4"/>       
+    </RelativeLayout>
+    
+    <RelativeLayout 
+        android:id="@+id/merchant_detail"
+        android:layout_width="fill_parent"
+        android:layout_height="120dp"
+        android:layout_below="@id/merchant"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp"
+        android:background="@drawable/my_tab_center">
+        
+        <TextView 
+            android:id="@+id/tv_merchant_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:layout_marginLeft="11dp"            
+            android:textSize="18dp"
+            android:textColor="@color/gray4"
+            android:text="莱利电玩城"/>       
+            
+        
+    </RelativeLayout>
+    
+    </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

@@ -5,8 +5,8 @@ import com.plugin.internet.core.annotations.OptionalParam;
 import com.plugin.internet.core.annotations.RequiredParam;
 import com.plugin.internet.core.annotations.RestMethodUrl;
 
-@RestMethodUrl("http://125.76.249.69:90/jgl/index.php?m=api&a=categoryList")
-public class CategoryListRequest extends RequestBase<GetCategoryResponse> {
+@RestMethodUrl("http://www.23jugeili.com:8106/jgl/index.php?m=api&a=categoryList")
+public class GetCategoryListRequest extends RequestBase<GetCategoryListResponse> {
     
 	@OptionalParam("cate_id")
     private int cate_id;
@@ -14,7 +14,7 @@ public class CategoryListRequest extends RequestBase<GetCategoryResponse> {
     @OptionalParam("city")
     private int city;
 
-    public CategoryListRequest(int cate_id, int city) {
+    public GetCategoryListRequest(int cate_id, int city) {
     	this.cate_id = cate_id ;
     	this.city = city;
     }

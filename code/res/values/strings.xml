@@ -23,6 +23,13 @@
     <string name="tuangou_title">团购</string>
     <string name="tuangou_yuan">元</string>
     <string name="tuangou_ren">人</string>
+    <string name="order_default">默认排序</string>
+    <string name="order_near">离我最近</string>
+    <string name="order_comment">评价最高</string>
+    <string name="order_new">最新发布</string>
+    <string name="order_popu">人气最高</string>
+    <string name="order_low_price">价格最低</string>
+    <string name="order_high_price">价格最高</string>
 
     <!-- 我的 -->
     <string name="profile_title">我的</string>
@@ -35,6 +42,11 @@
     <string name="payed">已付款订单</string>
     <string name="lucky">抽奖单</string>
     <string name="coupon">代金券</string>
+    
+    <!-- 详情 -->
+    <string name="buy">立即抢购</string>
+    <string name="buy_num">人已购买</string>
+    <string name="merchant_info">商家信息</string>
     
     <!-- 更多 -->
     <string name="more_title">更多</string>

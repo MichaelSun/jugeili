@@ -127,4 +127,7 @@
     
     <!-- register page color -->
     
+    <!-- detail page color -->
+    <color name="detail_text_color_1">#ff7f00</color>
+    
 </resources>

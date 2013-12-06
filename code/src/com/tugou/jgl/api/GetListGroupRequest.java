@@ -5,7 +5,7 @@ import com.plugin.internet.core.annotations.OptionalParam;
 import com.plugin.internet.core.annotations.RequiredParam;
 import com.plugin.internet.core.annotations.RestMethodUrl;
 
-@RestMethodUrl("http://125.76.249.69:90/jgl/index.php?m=api&a=groupList")
+@RestMethodUrl("http://www.23jugeili.com:90/jgl/index.php?m=api&a=groupList")
 public class GetListGroupRequest extends RequestBase<GetListGroupResponse> {
 	@OptionalParam("category")
     private double category;
