@@ -47,10 +47,23 @@
     <string name="buy">立即抢购</string>
     <string name="buy_num">人已购买</string>
     <string name="merchant_info">商家信息</string>
+    <string name="merchant_all">查看全部分店</string>
+    <string name="group_set">套餐</string>
+    <string name="check_detail">查看图文详情</string>
+    <string name="discuss">评价</string>
+    <string name="view_all_discuss">查看全部评价</string>
     
     <!-- 更多 -->
     <string name="more_title">更多</string>
     
+    <!-- 登录 -->
+    <string name="username">用户名</string>
+    <string name="password">密码</string>
+    <string name="login">登录</string>
+    <string name="email_password_error_tips">邮箱和密码都不能为空</string>
+    
+    
+    <string name="network_error_tips">网络错误</string>
 
     
 </resources>

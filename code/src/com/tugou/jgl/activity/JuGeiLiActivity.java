@@ -12,9 +12,12 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.tugou.jgl.R;
+import com.tugou.jgl.base.Evnironment;
+import com.tugou.jgl.datamodel.LocationData;
 import com.tugou.jgl.fragment.GroupOnFragment;
 import com.tugou.jgl.fragment.LocationFrament;
 import com.tugou.jgl.fragment.MyFragment;
+import com.tugou.jgl.utils.UploadCellIdThread;
 
 public class JuGeiLiActivity extends BaseActivity {
 
@@ -47,11 +50,14 @@ public class JuGeiLiActivity extends BaseActivity {
     private TextView mProfileTV;
     private TextView mMoreTV;
 
+    public static LocationData locationData;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jugeili);
 
+        Evnironment.appContext = this.getApplicationContext();
+        loadingLocation();
         initData(savedInstanceState);
         initUI();
     }
@@ -260,5 +266,24 @@ public class JuGeiLiActivity extends BaseActivity {
         updateBottomSelected(tabId);
 
         tans.commitAllowingStateLoss();
+    }
+    
+    private void loadingLocation() {
+    	locationData = new LocationData();
+        UploadCellIdThread thread = UploadCellIdThread.getInstance(this);
+        //thread.setUpdateLocationListener(this);
+        //thread.startThread();
+
+//        if (mProgressDialog.isShowing()) {
+//            mProgressDialog.dismiss();
+//        }
+//        mProgressDialog.setMessage(getString(R.string.tips_location));
+//        mProgressDialog.show();
+        
+        Evnironment.uploaded_location = thread.updateLastPositionNow();
+        if (Evnironment.uploaded_location) {
+            thread.startLocationPosition();
+        }
+
     }
 }

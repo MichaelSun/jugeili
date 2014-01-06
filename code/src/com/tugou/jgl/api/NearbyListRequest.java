@@ -5,7 +5,7 @@ import com.plugin.internet.core.annotations.OptionalParam;
 import com.plugin.internet.core.annotations.RequiredParam;
 import com.plugin.internet.core.annotations.RestMethodUrl;
 
-@RestMethodUrl("http://www.23jugeili.com:8106/jgl/index.php?m=api&a=nearbyList")
+@RestMethodUrl("http://www.23jugeili.com:90/jgl/index.php?m=api&a=nearbyList")
 public class NearbyListRequest extends RequestBase<NearbyListResponse> {
 	@RequiredParam("lat")
     private double lat;
