@@ -10,10 +10,13 @@ import com.tugou.jgl.activity.GroupDetailActivity;
 import com.tugou.jgl.activity.LoginActivity;
 import com.tugou.jgl.adapter.GrouponListAdapter;
 import com.tugou.jgl.adapter.SubListAdater;
+import com.tugou.jgl.api.GetAreaListRequest;
+import com.tugou.jgl.api.GetAreaListResponse;
 import com.tugou.jgl.api.GetCategoryListRequest;
 import com.tugou.jgl.api.GetCategoryListResponse;
 import com.tugou.jgl.api.GetListGroupRequest;
 import com.tugou.jgl.api.GetListGroupResponse;
+import com.tugou.jgl.api.GetAreaListResponse.GroupAreaInfo;
 import com.tugou.jgl.api.GetCategoryListResponse.GroupCategoryInfo;
 import com.tugou.jgl.api.GetListGroupResponse.GroupInfo;
 import com.tugou.jgl.popupmenu.RRMenuItem;
@@ -43,6 +46,7 @@ public class GroupOnFragment extends Fragment {
     private RRPopupMenu mPopupMenuOrder;
     private GroupInfo[] groupInfo;
     private GroupCategoryInfo[] groupCategoryInfo;
+    private GroupAreaInfo[] groupAreaInfo ;
 
     private static final int SET_LIST = 1;
     private Handler mHandler = new Handler() {
@@ -83,9 +87,10 @@ public class GroupOnFragment extends Fragment {
         //mHandler.sendEmptyMessage(SET_LIST);
         initPopupMenu();
         getListGroup();
+        GetAreaList();
         GetCategoryList();
         initPopupMenuOrder();
-        initPopupMenuLocation();
+        //initPopupMenuLocation();
         initUIView(view);
         
 //        mPullToRefreshListView.setOnClickListener(new OnClickListener(){
@@ -128,15 +133,19 @@ public class GroupOnFragment extends Fragment {
     	}
     }
     
-    private void initPopupMenuLocation() {
+    private void initPopupMenuLocation(GroupAreaInfo[] groupAreaInfo) {
     	//mPopupMenuLocation = new RRPopupMenu(getActivity().getApplicationContext(), RRPopupMenu.RRMenuType.DROPDOWN);
-    	mPopupMenuLocation.addItem(new RRMenuItem(getActivity().getApplicationContext(), 1000, getString(R.string.order_default), RRMenuItem.RRMenuItemStyle.STYLE_NORMAL));
-    	mPopupMenuLocation.addItem(new RRMenuItem(getActivity().getApplicationContext(), 1001, getString(R.string.order_near), RRMenuItem.RRMenuItemStyle.STYLE_NORMAL));
-    	mPopupMenuLocation.addItem(new RRMenuItem(getActivity().getApplicationContext(), 1002, getString(R.string.order_comment), RRMenuItem.RRMenuItemStyle.STYLE_NORMAL));
-    	mPopupMenuLocation.addItem(new RRMenuItem(getActivity().getApplicationContext(), 1003, getString(R.string.order_new), RRMenuItem.RRMenuItemStyle.STYLE_NORMAL));
-    	mPopupMenuLocation.addItem(new RRMenuItem(getActivity().getApplicationContext(), 1004, getString(R.string.order_popu), RRMenuItem.RRMenuItemStyle.STYLE_NORMAL));
-    	mPopupMenuLocation.addItem(new RRMenuItem(getActivity().getApplicationContext(), 1005, getString(R.string.order_low_price), RRMenuItem.RRMenuItemStyle.STYLE_NORMAL));
-    	mPopupMenuLocation.addItem(new RRMenuItem(getActivity().getApplicationContext(), 1006, getString(R.string.order_high_price), RRMenuItem.RRMenuItemStyle.STYLE_NORMAL));
+//    	mPopupMenuLocation.addItem(new RRMenuItem(getActivity().getApplicationContext(), 1000, getString(R.string.order_default), RRMenuItem.RRMenuItemStyle.STYLE_NORMAL));
+//    	mPopupMenuLocation.addItem(new RRMenuItem(getActivity().getApplicationContext(), 1001, getString(R.string.order_near), RRMenuItem.RRMenuItemStyle.STYLE_NORMAL));
+//    	mPopupMenuLocation.addItem(new RRMenuItem(getActivity().getApplicationContext(), 1002, getString(R.string.order_comment), RRMenuItem.RRMenuItemStyle.STYLE_NORMAL));
+//    	mPopupMenuLocation.addItem(new RRMenuItem(getActivity().getApplicationContext(), 1003, getString(R.string.order_new), RRMenuItem.RRMenuItemStyle.STYLE_NORMAL));
+//    	mPopupMenuLocation.addItem(new RRMenuItem(getActivity().getApplicationContext(), 1004, getString(R.string.order_popu), RRMenuItem.RRMenuItemStyle.STYLE_NORMAL));
+//    	mPopupMenuLocation.addItem(new RRMenuItem(getActivity().getApplicationContext(), 1005, getString(R.string.order_low_price), RRMenuItem.RRMenuItemStyle.STYLE_NORMAL));
+//    	mPopupMenuLocation.addItem(new RRMenuItem(getActivity().getApplicationContext(), 1006, getString(R.string.order_high_price), RRMenuItem.RRMenuItemStyle.STYLE_NORMAL));
+    	int iLen = groupAreaInfo.length;
+    	for(int i = 0; i < iLen; i++){
+    		mPopupMenuLocation.addItem(new RRMenuItem(getActivity().getApplicationContext(), 1000+i, groupAreaInfo[i].area_name, RRMenuItem.RRMenuItemStyle.STYLE_NORMAL));
+    	}
     	
     	mPopupMenuLocation.setOnRRMenuItemClickListener(new OnRRMenuItemClickListener(){
 
@@ -165,7 +174,7 @@ public class GroupOnFragment extends Fragment {
 
             @Override
             public void onClick(View v) {
-            	mPopupMenuOrder.show(dest);
+            	mPopupMenuLocation.show(dest);
             }
         });
         
@@ -230,6 +239,27 @@ public class GroupOnFragment extends Fragment {
 //                    	mHandler.sendEmptyMessage(SET_LIST);
                     	groupCategoryInfo = response.groupCategoryInfo;
                     	initPopupMenuCategory(groupCategoryInfo);
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }));
+    }
+    
+    private void GetAreaList() {
+        CustomThreadPool.getInstance().excute(new TaskWrapper(new Runnable() {
+            @Override
+            public void run() {
+                try {
+					final GetAreaListResponse response = InternetUtils.request( 
+							GroupOnFragment.this.getActivity().getApplicationContext(), new GetAreaListRequest(0, 
+									1));
+                    if (response != null) {
+//                    	groupInfo = response.groupInfo;
+//                    	mHandler.sendEmptyMessage(SET_LIST);
+                    	groupAreaInfo = response.groupAreaInfo;
+                    	initPopupMenuLocation(groupAreaInfo);
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
