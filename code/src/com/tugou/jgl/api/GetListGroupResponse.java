@@ -1,11 +1,27 @@
 package com.tugou.jgl.api;
 
+import java.util.Arrays;
+
 import com.plugin.internet.core.ResponseBase;
 import com.plugin.internet.core.json.JsonCreator;
 import com.plugin.internet.core.json.JsonProperty;
 
 public class GetListGroupResponse extends ResponseBase {
+	@Override
+	public String toString() {
+		return "GetListGroupResponse [groupInfo=" + Arrays.toString(groupInfo)
+				+ "]";
+	}
+
 	public static final class GroupInfo {
+		@Override
+		public String toString() {
+			return "GroupInfo [cover=" + cover + ", name=" + name
+					+ ", description=" + description + ", price=" + price
+					+ ", regular_price=" + regular_price + ", num_bought="
+					+ num_bought + ", is_new=" + is_new + "]";
+		}
+
 		public String cover;
 		public String name;
 		public String description;

@@ -1,5 +1,7 @@
 package com.tugou.jgl.api;
 
+import java.util.Arrays;
+
 import com.plugin.internet.core.ResponseBase;
 import com.plugin.internet.core.json.JsonCreator;
 import com.plugin.internet.core.json.JsonProperty;
@@ -7,7 +9,18 @@ import com.tugou.jgl.api.GetListGroupResponse.GroupInfo;
 
 public class GetCategoryListResponse extends ResponseBase {
 	
+	@Override
+	public String toString() {
+		return "GetCategoryListResponse [groupCategoryInfo="
+				+ Arrays.toString(groupCategoryInfo) + "]";
+	}
+
 	public static final class SubList {
+		@Override
+		public String toString() {
+			return "SubList [sub_id=" + sub_id + ", name=" + name + "]";
+		}
+
 		public String sub_id;
 		public String name;
 		
@@ -21,6 +34,14 @@ public class GetCategoryListResponse extends ResponseBase {
 	}
 	
 	public static final class GroupCategoryInfo {
+		@Override
+		public String toString() {
+			return "GroupCategoryInfo [category_id=" + category_id
+					+ ", category_name=" + category_name + ", is_new=" + is_new
+					+ ", is_hot=" + is_hot + ", subList="
+					+ Arrays.toString(subList) + "]";
+		}
+
 		public String category_id;
 		public String category_name;
 		public String is_new;
@@ -50,4 +71,6 @@ public class GetCategoryListResponse extends ResponseBase {
             @JsonProperty("result") GroupCategoryInfo[] result) {
         this.groupCategoryInfo = result;
     }
+    
+    
 }

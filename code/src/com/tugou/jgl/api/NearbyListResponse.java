@@ -1,11 +1,29 @@
 package com.tugou.jgl.api;
 
+import java.util.Arrays;
+
 import com.plugin.internet.core.ResponseBase;
 import com.plugin.internet.core.json.JsonCreator;
 import com.plugin.internet.core.json.JsonProperty;
 
 public class NearbyListResponse extends ResponseBase {
+	@Override
+	public String toString() {
+		return "NearbyListResponse [groupInfo=" + Arrays.toString(groupInfo)
+				+ "]";
+	}
+
 	public static final class GroupInfo {
+		@Override
+		public String toString() {
+			return "GroupInfo [id=" + id + ", cover=" + cover + ", name="
+					+ name + ", description=" + description + ", price="
+					+ price + ", regular_price=" + regular_price
+					+ ", num_bought=" + num_bought + ", distance=" + distance
+					+ ", is_new=" + is_new + ", is_no_order=" + is_no_order
+					+ ", is_holiday_can_use=" + is_holiday_can_use + "]";
+		}
+
 		public String id;
 		public String cover;
 		public String name;
