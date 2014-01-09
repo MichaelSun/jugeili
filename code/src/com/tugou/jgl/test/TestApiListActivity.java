@@ -29,6 +29,8 @@ import com.tugou.jgl.api.GetGoodDetailRequest;
 import com.tugou.jgl.api.GetGoodDetailResponse;
 import com.tugou.jgl.api.GetListGroupRequest;
 import com.tugou.jgl.api.GetListGroupResponse;
+import com.tugou.jgl.api.GetRelativeGroupListRequest;
+import com.tugou.jgl.api.GetRelativeGroupListResponse;
 import com.tugou.jgl.api.LoginRequest;
 import com.tugou.jgl.api.LoginResponse;
 import com.tugou.jgl.api.NearbyListRequest;
@@ -88,6 +90,9 @@ public class TestApiListActivity extends BaseActivity {
 	        		break;
 	        	case TestConstant.GetGoodDetailRequest:
 	        		GetGoodDetail(94);	
+	        		break;
+	        	case TestConstant.GetRelativeGroupListRequest:
+	        		GetRelativeGroupList(94);
 	        		break;
 	        	default:
 	        		break;
@@ -159,7 +164,10 @@ public class TestApiListActivity extends BaseActivity {
         	case TestConstant.GetGoodDetailRequest:
         		holder.textViewReq.setText("GetGoodDetailRequest");
         		break;
-        		
+        	case TestConstant.GetRelativeGroupListRequest:
+        		holder.textViewReq.setText("GetRelativeGroupListRequest");
+        		break;
+        			
         	default:
         		break;
         	}
@@ -361,6 +369,25 @@ public class TestApiListActivity extends BaseActivity {
                 try {
 					final GetGoodDetailResponse response = InternetUtils.request( 
 							TestApiListActivity.this.getApplicationContext(), new GetGoodDetailRequest(id));
+					if (response != null) {
+                    	ToTextView(response.toString());
+                    }else{
+                    	ToTextView("null");
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }));
+    }
+    
+    private void GetRelativeGroupList(final int groupId) {
+        CustomThreadPool.getInstance().excute(new TaskWrapper(new Runnable() {
+            @Override
+            public void run() {
+                try {
+					final GetRelativeGroupListResponse response = InternetUtils.request( 
+							TestApiListActivity.this.getApplicationContext(), new GetRelativeGroupListRequest(groupId));
 					if (response != null) {
                     	ToTextView(response.toString());
                     }else{
