@@ -23,12 +23,18 @@ import com.tugou.jgl.api.GetAreaListRequest;
 import com.tugou.jgl.api.GetAreaListResponse;
 import com.tugou.jgl.api.GetCategoryListRequest;
 import com.tugou.jgl.api.GetCategoryListResponse;
+import com.tugou.jgl.api.GetCityListRequest;
+import com.tugou.jgl.api.GetCityListResponse;
+import com.tugou.jgl.api.GetGoodDetailRequest;
+import com.tugou.jgl.api.GetGoodDetailResponse;
 import com.tugou.jgl.api.GetListGroupRequest;
 import com.tugou.jgl.api.GetListGroupResponse;
 import com.tugou.jgl.api.LoginRequest;
 import com.tugou.jgl.api.LoginResponse;
 import com.tugou.jgl.api.NearbyListRequest;
 import com.tugou.jgl.api.NearbyListResponse;
+import com.tugou.jgl.api.SearchGoodsRequest;
+import com.tugou.jgl.api.SearchGoodsResponse;
 import com.tugou.jgl.base.Evnironment;
 import com.tugou.jgl.fragment.GroupOnFragment;
 import com.tugou.jgl.fragment.SubListFragment;
@@ -71,7 +77,18 @@ public class TestApiListActivity extends BaseActivity {
 	        	case TestConstant.GetAreaListRequest:
 	        		getAreaList(0, 1);	
 	        		break;
-	        		
+	        	case TestConstant.GetAllCityListRequest:
+	        		getCityAllList();	
+	        		break;	
+	        	case TestConstant.GetCityListRequest:
+	        		getCityList(18);	
+	        		break;	
+	        	case TestConstant.searchGoodsRequest:
+	        		SearchGoods("a");	
+	        		break;
+	        	case TestConstant.GetGoodDetailRequest:
+	        		GetGoodDetail(94);	
+	        		break;
 	        	default:
 	        		break;
 	        	}
@@ -130,6 +147,19 @@ public class TestApiListActivity extends BaseActivity {
         	case TestConstant.GetAreaListRequest:
         		holder.textViewReq.setText("GetAreaListRequest");
         		break;
+        	case TestConstant.GetAllCityListRequest:
+        		holder.textViewReq.setText("GetAllCityListRequest");
+        		break;  		
+        	case TestConstant.GetCityListRequest:
+        		holder.textViewReq.setText("GetCityListRequest");
+        		break;       		
+        	case TestConstant.searchGoodsRequest:
+        		holder.textViewReq.setText("searchGoodsRequest");
+        		break;
+        	case TestConstant.GetGoodDetailRequest:
+        		holder.textViewReq.setText("GetGoodDetailRequest");
+        		break;
+        		
         	default:
         		break;
         	}
@@ -255,6 +285,82 @@ public class TestApiListActivity extends BaseActivity {
                 try {
 					final GetAreaListResponse response = InternetUtils.request( 
 							TestApiListActivity.this.getApplicationContext(), new GetAreaListRequest(area, city));
+					if (response != null) {
+                    	ToTextView(response.toString());
+                    }else{
+                    	ToTextView("null");
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }));
+    }
+    
+    private void getCityAllList() {
+        CustomThreadPool.getInstance().excute(new TaskWrapper(new Runnable() {
+            @Override
+            public void run() {
+                try {
+					final GetCityListResponse response = InternetUtils.request( 
+							TestApiListActivity.this.getApplicationContext(), new GetCityListRequest());
+					if (response != null) {
+                    	ToTextView(response.toString());
+                    }else{
+                    	ToTextView("null");
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }));
+    }
+    
+    private void getCityList(final int city) {
+        CustomThreadPool.getInstance().excute(new TaskWrapper(new Runnable() {
+            @Override
+            public void run() {
+                try {
+					final GetCityListResponse response = InternetUtils.request( 
+							TestApiListActivity.this.getApplicationContext(), new GetCityListRequest(city));
+					if (response != null) {
+                    	ToTextView(response.toString());
+                    }else{
+                    	ToTextView("null");
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }));
+    }
+    
+    private void SearchGoods(final String keyword) {
+        CustomThreadPool.getInstance().excute(new TaskWrapper(new Runnable() {
+            @Override
+            public void run() {
+                try {
+					final SearchGoodsResponse response = InternetUtils.request( 
+							TestApiListActivity.this.getApplicationContext(), new SearchGoodsRequest(keyword));
+					if (response != null) {
+                    	ToTextView(response.toString());
+                    }else{
+                    	ToTextView("null");
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }));
+    }
+    
+    private void GetGoodDetail(final int id) {
+        CustomThreadPool.getInstance().excute(new TaskWrapper(new Runnable() {
+            @Override
+            public void run() {
+                try {
+					final GetGoodDetailResponse response = InternetUtils.request( 
+							TestApiListActivity.this.getApplicationContext(), new GetGoodDetailRequest(id));
 					if (response != null) {
                     	ToTextView(response.toString());
                     }else{
