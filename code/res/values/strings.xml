@@ -56,6 +56,16 @@
     
     <!-- 更多 -->
     <string name="more_title">更多</string>
+    <string name="only_wifi">仅wifi下显示团购图片</string>
+    <string name="new_notify_everyday">新单每日提醒</string>
+    <string name="notify_time">提醒时间</string>
+    <string name="share_setting">分享设置</string>
+    <string name="clear_cache">清空缓存</string>
+    <string name="suggestion_feedback">意见反馈</string>
+    <string name="pay_help">支付帮助</string>
+    <string name="check_update">检查更新</string>
+    <string name="about_jugeili">关于聚给力</string>
+    <string name="favour_app">精品应用</string>
     
     <!-- 登录 -->
     <string name="username">用户名</string>

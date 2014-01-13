@@ -16,6 +16,7 @@ import com.tugou.jgl.base.Evnironment;
 import com.tugou.jgl.datamodel.LocationData;
 import com.tugou.jgl.fragment.GroupOnFragment;
 import com.tugou.jgl.fragment.LocationFrament;
+import com.tugou.jgl.fragment.MoreFragment;
 import com.tugou.jgl.fragment.MyFragment;
 import com.tugou.jgl.utils.UploadCellIdThread;
 
@@ -181,7 +182,7 @@ public class JuGeiLiActivity extends BaseActivity {
 
         mMoreFragment = mFragmentManager.findFragmentByTag(TAG_SETTING_FRAGMENT);
         if (mMoreFragment == null) {
-            mMoreFragment = new LocationFrament();
+            mMoreFragment = new MoreFragment();
 
             FragmentTransaction trans = mFragmentManager.beginTransaction();
             trans.add(R.id.fragment_container, mMoreFragment, TAG_SETTING_FRAGMENT);
@@ -227,30 +228,32 @@ public class JuGeiLiActivity extends BaseActivity {
                 break;
 
             case R.id.profile:
-//                mCurrSelectedTabId = R.id.profile;
-//                mActionbar.setDisplayOptions(ActionBar.DISPLAY_SHOW_TITLE);
-//                mActionbar.setTitle(R.string.profile_title);
-//
-//                mLocationBtn.setSelected(false);
-//                mTuangouBtn.setSelected(false);
-//                mProfileBtn.setSelected(true);
-//                mMoreBtn.setSelected(false);
-//
-//                tans.hide(mLocationFragment);
-//                tans.hide(mTuangouFragment);
-//                tans.show(mProfileFragment);
-//                tans.hide(mMoreFragment);
+                mCurrSelectedTabId = R.id.profile;
+                mActionbar.setDisplayOptions(ActionBar.DISPLAY_SHOW_TITLE);
+                mActionbar.setTitle(R.string.profile_title);
+
+                mLocationBtn.setSelected(false);
+                mTuangouBtn.setSelected(false);
+                mProfileBtn.setSelected(true);
+                mMoreBtn.setSelected(false);
+
+                tans.hide(mLocationFragment);
+                tans.hide(mTuangouFragment);
+                tans.show(mProfileFragment);
+                tans.hide(mMoreFragment);
                 
-				Intent intent = new Intent();
-				intent.setClass(JuGeiLiActivity.this, LoginActivity.class);
-				startActivity(intent);
+//				Intent intent = new Intent();
+//				intent.setClass(JuGeiLiActivity.this, LoginActivity.class);
+//				startActivity(intent);
 				
                 break;
 
             case R.id.more:
                 mCurrSelectedTabId = R.id.more;
-                mActionbar.setDisplayOptions(ActionBar.DISPLAY_SHOW_HOME);
-                mActionbar.setIcon(R.drawable.actionbar_main_page_icon);
+                //mActionbar.setDisplayOptions(ActionBar.DISPLAY_SHOW_HOME);
+                //mActionbar.setIcon(R.drawable.actionbar_main_page_icon);
+                mActionbar.setDisplayOptions(ActionBar.DISPLAY_SHOW_TITLE);
+                mActionbar.setTitle(R.string.more_title);
 
                 mLocationBtn.setSelected(false);
                 mTuangouBtn.setSelected(false);

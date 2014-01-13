@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:background="@color/category_background_color">
+    
+    <ScrollView 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+    <RelativeLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+    <RelativeLayout 
+        android:id="@+id/only_wifi"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp"
+        android:background="@drawable/my_tab_above">
+        
+        <TextView 
+            android:id="@+id/tv_wifi_only"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="13dp"
+            android:text="@string/only_wifi"
+            android:textSize="15dp"
+            android:textColor="@color/gray4"
+            />
+        
+        <Switch 
+            android:id="@+id/switch_wifi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="13dp"
+            android:layout_centerVertical="true"
+            />    
+    </RelativeLayout> 
+    
+    <RelativeLayout 
+        android:id="@+id/new_notify"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/only_wifi"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp"
+        android:background="@drawable/my_tab_center">
+        
+        <TextView 
+            android:id="@+id/tv_new_notify"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="13dp"
+            android:text="@string/new_notify_everyday"
+            android:textSize="15dp"
+            android:textColor="@color/gray4"
+            />
+        
+        <Switch 
+            android:id="@+id/swithch_new_notify"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="13dp"
+            android:layout_centerVertical="true"
+            />    
+    </RelativeLayout>
+    
+    <RelativeLayout 
+        android:id="@+id/notify_time"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/new_notify"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp"
+        android:background="@drawable/my_tab_center">
+        
+        <TextView 
+            android:id="@+id/tv_notify_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="13dp"
+            android:text="@string/notify_time"
+            android:textSize="15dp"
+            android:textColor="@color/gray4"
+            />
+        
+        <TextView 
+            android:id="@+id/tv_notify_time_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:text="10:06"
+            android:textSize="13dp"
+            android:textColor="@color/gray9"
+            />
+        
+        <ImageView
+            android:id="@+id/button_notify_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="13dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/arrow_right"
+            />    
+    </RelativeLayout>
+    
+    <RelativeLayout 
+        android:id="@+id/share_setting"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/notify_time"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp"
+        android:background="@drawable/my_tab_center">
+        
+        <TextView 
+            android:id="@+id/tv_share_setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="13dp"
+            android:text="@string/share_setting"
+            android:textSize="15dp"
+            android:textColor="@color/gray4"
+            />
+               
+        <ImageView
+            android:id="@+id/button_share_setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="13dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/arrow_right"
+            />    
+    </RelativeLayout>
+    
+    <RelativeLayout 
+        android:id="@+id/clear_cache"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/share_setting"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp"
+        android:background="@drawable/my_tab_below">
+        
+        <TextView 
+            android:id="@+id/tv_clear_cache"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="13dp"
+            android:text="@string/clear_cache"
+            android:textSize="15dp"
+            android:textColor="@color/gray4"
+            />
+        
+        <TextView 
+            android:id="@+id/tv_clear_cache_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:text="3.14M"
+            android:textSize="13dp"
+            android:textColor="@color/gray9"
+            />
+        
+        <ImageView
+            android:id="@+id/button_clear_cache"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="13dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/arrow_right"
+            />    
+    </RelativeLayout>
+    
+    <RelativeLayout 
+        android:id="@+id/feedback"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/clear_cache"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp"
+        android:background="@drawable/my_tab_above">
+        
+        <TextView 
+            android:id="@+id/tv_feedback"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="13dp"
+            android:text="@string/suggestion_feedback"
+            android:textSize="15dp"
+            android:textColor="@color/gray4"
+            />
+        
+        <ImageView 
+            android:id="@+id/button_feedback"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="13dp"
+            android:layout_centerVertical="true"
+            />    
+    </RelativeLayout>
+    
+    <RelativeLayout 
+        android:id="@+id/pay_help"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/feedback"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp"
+        android:background="@drawable/my_tab_center">
+        
+        <TextView 
+            android:id="@+id/tv_pay_help"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="13dp"
+            android:text="@string/pay_help"
+            android:textSize="15dp"
+            android:textColor="@color/gray4"
+            />
+               
+        <ImageView
+            android:id="@+id/button_pay_help"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="13dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/arrow_right"
+            />    
+    </RelativeLayout>
+    
+    <RelativeLayout 
+        android:id="@+id/check_update"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/pay_help"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp"
+        android:background="@drawable/my_tab_center">
+        
+        <TextView 
+            android:id="@+id/tv_check_update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="13dp"
+            android:text="@string/check_update"
+            android:textSize="15dp"
+            android:textColor="@color/gray4"
+            />
+        
+        <TextView 
+            android:id="@+id/tv_check_update_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:text="当前版本v3.2.1"
+            android:textSize="13dp"
+            android:textColor="@color/gray9"
+            />
+        
+        <ImageView
+            android:id="@+id/button_check_update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="13dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/arrow_right"
+            />    
+    </RelativeLayout>
+
+    <RelativeLayout 
+        android:id="@+id/about_jugeili"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/check_update"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp"
+        android:background="@drawable/my_tab_below">
+        
+        <TextView 
+            android:id="@+id/tv_about_jugeili"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="13dp"
+            android:text="@string/about_jugeili"
+            android:textSize="15dp"
+            android:textColor="@color/gray4"
+            />
+        
+        <ImageView
+            android:id="@+id/button_about_jugeili"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="13dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/arrow_right"
+            />    
+    </RelativeLayout>
+    
+    <RelativeLayout 
+        android:id="@+id/favour_app"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/about_jugeili"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp"
+        android:background="@drawable/my_tab">
+        
+        <TextView 
+            android:id="@+id/tv_favour_app"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="13dp"
+            android:text="@string/favour_app"
+            android:textSize="15dp"
+            android:textColor="@color/gray4"
+            />
+        
+        <ImageView
+            android:id="@+id/button_favour_app"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="13dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/arrow_right"
+            />    
+    </RelativeLayout>
+    </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>
