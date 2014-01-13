@@ -14,14 +14,16 @@ public class GetListGroupResponse extends ResponseBase {
 	}
 
 	public static final class GroupInfo {
+
 		@Override
 		public String toString() {
-			return "GroupInfo [cover=" + cover + ", name=" + name
-					+ ", description=" + description + ", price=" + price
-					+ ", regular_price=" + regular_price + ", num_bought="
-					+ num_bought + ", is_new=" + is_new + "]";
+			return "GroupInfo [id=" + id + ", cover=" + cover + ", name="
+					+ name + ", description=" + description + ", price="
+					+ price + ", regular_price=" + regular_price
+					+ ", num_bought=" + num_bought + ", is_new=" + is_new + "]";
 		}
 
+		public String id;
 		public String cover;
 		public String name;
 		public String description;
@@ -32,6 +34,7 @@ public class GetListGroupResponse extends ResponseBase {
 		
 		@JsonCreator
         public GroupInfo(
+        		@JsonProperty("id") String id,
                 @JsonProperty("cover") String cover,
                 @JsonProperty("name") String name, 
                 @JsonProperty("description") String description,
@@ -39,6 +42,7 @@ public class GetListGroupResponse extends ResponseBase {
                 @JsonProperty("regular_price") String regular_price,
                 @JsonProperty("num_bought") String num_bought,
                 @JsonProperty("num_bought") String is_new){
+			this.id  = id;
 			this.cover  = cover;
 			this.name  = name;
 			this.description  = description;

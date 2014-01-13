@@ -145,7 +145,7 @@
             android:background="@drawable/detail_star_gray"/>
         
         <TextView 
-            android:id="@+id/grade"
+            android:id="@+id/tv_grade"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/star_5"
@@ -159,7 +159,7 @@
             android:id="@+id/grade_num"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/grade"
+            android:layout_toRightOf="@id/tv_grade"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
             android:textColor="@color/detail_text_color_1"    
@@ -440,7 +440,7 @@
     </RelativeLayout>
     
     <RelativeLayout 
-        android:id="@+id/discuss_info_1"
+        android:id="@+id/discuss_1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/discuss"
@@ -471,10 +471,10 @@
     </RelativeLayout>
     
     <RelativeLayout 
-        android:id="@+id/discuss_info_2"
+        android:id="@+id/discuss_2"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/discuss_info_1"
+        android:layout_below="@id/discuss_1"
         android:layout_marginLeft="6dp"
         android:layout_marginRight="6dp"
         android:background="@drawable/my_tab_center"
@@ -502,10 +502,10 @@
     </RelativeLayout>
     
     <RelativeLayout 
-        android:id="@+id/discuss_info_3"
+        android:id="@+id/discuss_3"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/discuss_info_2"
+        android:layout_below="@id/discuss_2"
         android:layout_marginLeft="6dp"
         android:layout_marginRight="6dp"
         android:background="@drawable/my_tab_center"
@@ -536,7 +536,7 @@
         android:id="@+id/discuss_bottom"
         android:layout_width="fill_parent"
         android:layout_height="45dp"
-        android:layout_below="@id/discuss_info_3"
+        android:layout_below="@id/discuss_3"
         android:background="@drawable/detail_bg1"
         android:layout_marginLeft="6dp"
         android:layout_marginRight="6dp"

@@ -193,6 +193,9 @@ public class GroupOnFragment extends Fragment {
 			public void onItemClick(AdapterView<?> parent, View view, int position,
 					long id) {
 				Intent i = new Intent(GroupOnFragment.this.getActivity(), GroupDetailActivity.class);
+				Bundle boundle = new Bundle();
+				boundle.putString("group_id", groupInfo[position - 1].id);
+				i.putExtras(boundle);
                 startActivity(i);
 			}
         	
