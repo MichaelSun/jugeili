@@ -12,7 +12,8 @@
         android:layout_width="wrap_content"
         android:layout_height="fill_parent"
         >
-    <ImageView 
+        
+    <com.plugin.common.view.WebImageView
 	    android:id="@+id/cover"
 	    android:layout_width="fill_parent"
 	    android:layout_height="218dp"/>

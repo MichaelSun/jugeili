@@ -1,6 +1,9 @@
 package com.tugou.jgl.utils;
 
 public class Constant {
+	//base url for image
+	public static String BASE_URL = "http://www.23jugeili.com:90/jgl";
+	
 	//groupon category
     public static double CATEGORY_ALL = 0;
     

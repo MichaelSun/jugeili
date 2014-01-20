@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.plugin.common.utils.CustomThreadPool;
 import com.plugin.common.utils.CustomThreadPool.TaskWrapper;
+import com.plugin.common.view.WebImageView;
 import com.plugin.internet.InternetUtils;
 import com.tugou.jgl.R;
 import com.tugou.jgl.adapter.GrouponListAdapter;
@@ -18,10 +19,11 @@ import com.tugou.jgl.api.GetGoodDetailResponse;
 import com.tugou.jgl.api.GetGoodDetailResponse.Result;
 import com.tugou.jgl.fragment.SubListFragment;
 import com.tugou.jgl.test.TestApiListActivity;
+import com.tugou.jgl.utils.Constant;
 import com.tugou.jgl.utils.Debug;
 
 public class GroupDetailActivity extends BaseActivity {
-	private ImageView imageViewCover;
+	private WebImageView imageViewCover;
 	private ImageView imageViewFreeTips;
 	private TextView tvPrice;
 	private TextView tvYuan;
@@ -80,7 +82,7 @@ public class GroupDetailActivity extends BaseActivity {
     }
     
     private void initUI(){
-    	imageViewCover = (ImageView)findViewById(R.id.cover);
+    	imageViewCover = (WebImageView)findViewById(R.id.cover);
     	imageViewFreeTips = (ImageView)findViewById(R.id.free_tips);
     	tvPrice = (TextView)findViewById(R.id.tv_price);
     	tvYuan = (TextView)findViewById(R.id.tv_yuan);
@@ -134,8 +136,10 @@ public class GroupDetailActivity extends BaseActivity {
     }
     
     private void DrawDetailView(){
+    	Debug.LOGD("!!!!!!!!!!!!!!!" + Constant.BASE_URL + result.cover);
 		imageViewCover.setImageURI(new Uri.Builder()
-	        .path(result.cover).build());
+	        .path(Constant.BASE_URL + result.cover).build());
+		
 		tvGroupTitle.setText(result.name);
 		tvPrice.setText(result.price);
 		tvDescription.setText(result.description);

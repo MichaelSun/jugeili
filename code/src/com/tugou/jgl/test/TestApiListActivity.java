@@ -71,7 +71,7 @@ public class TestApiListActivity extends BaseActivity {
 	        		getListGroup();
 	        		break;
 	        	case TestConstant.LoginRequest:
-	        		Login("liyilu@live.cn", StringUtils.MD5Encode("123456"));
+	        		Login("liyilu@live.cn", "123456");//StringUtils.MD5Encode("123456"));
 	        		break;
 	        	case TestConstant.NearbyListRequest:
 	        		getNearbyList(100, 0, 0, 0, 0, 0);
