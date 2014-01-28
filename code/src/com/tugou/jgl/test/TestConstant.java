@@ -11,4 +11,8 @@ public class TestConstant {
     public final static int searchGoodsRequest = 7;
     public final static int GetGoodDetailRequest = 8;
     public final static int GetRelativeGroupListRequest = 9;
+    public final static int GetCommentsRequest = 10;
+    public final static int GetUserInfo = 11;
+    public final static int GetOrders = 12;
+    public final static int GetGroupbond = 13;
 }

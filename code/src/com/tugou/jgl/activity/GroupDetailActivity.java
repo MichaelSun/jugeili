@@ -17,6 +17,8 @@ import com.tugou.jgl.adapter.GrouponListAdapter;
 import com.tugou.jgl.api.GetGoodDetailRequest;
 import com.tugou.jgl.api.GetGoodDetailResponse;
 import com.tugou.jgl.api.GetGoodDetailResponse.Result;
+import com.tugou.jgl.api.getCommentsRequest;
+import com.tugou.jgl.api.getCommentsResponse;
 import com.tugou.jgl.fragment.SubListFragment;
 import com.tugou.jgl.test.TestApiListActivity;
 import com.tugou.jgl.utils.Constant;
@@ -54,14 +56,19 @@ public class GroupDetailActivity extends BaseActivity {
 	
 	private String strId;
 	private Result result;
+	private getCommentsResponse response;
 	
     private static final int SET_VIEW = 1;
+    private static final int SET_COMMENTS = 2;
     private Handler mHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
             switch (msg.what) {
                 case SET_VIEW:
                 	DrawDetailView();
+                	break;
+                case SET_COMMENTS:
+                	DrawDetailComments();
                 	break;
             }
         }
@@ -113,6 +120,27 @@ public class GroupDetailActivity extends BaseActivity {
     	
     	GetGoodDetail(Integer.valueOf(this.strId));
     }
+    private void GetComments(final int groupId) {
+
+        CustomThreadPool.getInstance().excute(new TaskWrapper(new Runnable() {
+            @Override
+            public void run() {
+                try {
+					final getCommentsResponse response = InternetUtils.request( 
+							GroupDetailActivity.this.getApplicationContext(), new getCommentsRequest(groupId, 1));
+					if (response != null) {
+						//if()
+						GroupDetailActivity.this.response = response;
+						mHandler.sendEmptyMessage(SET_COMMENTS);
+                    }else{
+                    	
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }));
+    }
     
     private void GetGoodDetail(final int id) {
         CustomThreadPool.getInstance().excute(new TaskWrapper(new Runnable() {
@@ -125,6 +153,7 @@ public class GroupDetailActivity extends BaseActivity {
 						//if()
 						result = response.result;
 						mHandler.sendEmptyMessage(SET_VIEW);
+						GetGoodDetail(Integer.valueOf(result.id));
                     }else{
                     	
                     }
@@ -156,6 +185,15 @@ public class GroupDetailActivity extends BaseActivity {
 		tvSetTips.setText(result.purchase_notes);
 		//tvMerchantAddr.setText(result.merchant_addr);
 		
+    }
+    
+    private void DrawDetailComments(){
+    	tvDiscussName1.setText(response.result.list[0].user_name);
+    	tvDiscussInfo1.setText(response.result.list[0].content);
+    	tvDiscussName2.setText(response.result.list[1].user_name);
+    	tvDiscussInfo2.setText(response.result.list[1].content);
+    	tvDiscussName3.setText(response.result.list[2].user_name);
+    	tvDiscussInfo3.setText(response.result.list[3].content);
     }
     
     private void drawStart(double grade){

@@ -83,9 +83,9 @@ public class LoginActivity extends BaseActivity {
 					final LoginResponse response = InternetUtils.request( 
 							LoginActivity.this.getApplicationContext(), new LoginRequest(pwd, email));//versionCode));
                     if (response != null) {
-                    	if(Integer.valueOf(response.result) == 0){
+                    	if(Integer.valueOf(response.status) == 1){
                     		Debug.LOGD("login success!!");
-                    	}else if(Integer.valueOf(response.result) == 1){
+                    	}else if(Integer.valueOf(response.status) == 0){
                     		Toast.makeText(LoginActivity.this.getApplicationContext(), response.message,
                                     Toast.LENGTH_LONG).show();
                     	}

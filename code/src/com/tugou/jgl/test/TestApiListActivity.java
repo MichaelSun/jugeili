@@ -27,16 +27,24 @@ import com.tugou.jgl.api.GetCityListRequest;
 import com.tugou.jgl.api.GetCityListResponse;
 import com.tugou.jgl.api.GetGoodDetailRequest;
 import com.tugou.jgl.api.GetGoodDetailResponse;
+import com.tugou.jgl.api.GetGroupbondRequest;
+import com.tugou.jgl.api.GetGroupbondResponse;
 import com.tugou.jgl.api.GetListGroupRequest;
 import com.tugou.jgl.api.GetListGroupResponse;
+import com.tugou.jgl.api.GetOrdersRequest;
+import com.tugou.jgl.api.GetOrdersResponse;
 import com.tugou.jgl.api.GetRelativeGroupListRequest;
 import com.tugou.jgl.api.GetRelativeGroupListResponse;
+import com.tugou.jgl.api.GetUserInfoRequest;
+import com.tugou.jgl.api.GetUserInfoResponse;
 import com.tugou.jgl.api.LoginRequest;
 import com.tugou.jgl.api.LoginResponse;
 import com.tugou.jgl.api.NearbyListRequest;
 import com.tugou.jgl.api.NearbyListResponse;
 import com.tugou.jgl.api.SearchGoodsRequest;
 import com.tugou.jgl.api.SearchGoodsResponse;
+import com.tugou.jgl.api.getCommentsRequest;
+import com.tugou.jgl.api.getCommentsResponse;
 import com.tugou.jgl.base.Evnironment;
 import com.tugou.jgl.fragment.GroupOnFragment;
 import com.tugou.jgl.fragment.SubListFragment;
@@ -71,7 +79,8 @@ public class TestApiListActivity extends BaseActivity {
 	        		getListGroup();
 	        		break;
 	        	case TestConstant.LoginRequest:
-	        		Login("liyilu@live.cn", "123456");//StringUtils.MD5Encode("123456"));
+	        		Login("user", StringUtils.MD5Encode("123456"));
+	        		
 	        		break;
 	        	case TestConstant.NearbyListRequest:
 	        		getNearbyList(100, 0, 0, 0, 0, 0);
@@ -93,6 +102,18 @@ public class TestApiListActivity extends BaseActivity {
 	        		break;
 	        	case TestConstant.GetRelativeGroupListRequest:
 	        		GetRelativeGroupList(94);
+	        		break;
+	        	case TestConstant.GetCommentsRequest:
+	        		getCommentList();
+	        		break;
+	        	case TestConstant.GetUserInfo:
+	        		getUserInfo();
+	        		break;
+	        	case TestConstant.GetOrders:
+	        		getOrders();
+	        		break;
+	        	case TestConstant.GetGroupbond:
+	        		getGroupbond();
 	        		break;
 	        	default:
 	        		break;
@@ -167,7 +188,18 @@ public class TestApiListActivity extends BaseActivity {
         	case TestConstant.GetRelativeGroupListRequest:
         		holder.textViewReq.setText("GetRelativeGroupListRequest");
         		break;
-        			
+        	case TestConstant.GetCommentsRequest:
+        		holder.textViewReq.setText("GetCommentsRequest");
+        		break;
+        	case TestConstant.GetUserInfo:
+        		holder.textViewReq.setText("GetUserInfo");
+        		break;
+        	case TestConstant.GetOrders:
+        		holder.textViewReq.setText("GetOrders");
+        		break;
+        	case TestConstant.GetGroupbond:
+        		holder.textViewReq.setText("GetGroupbond");
+        		break;
         	default:
         		break;
         	}
@@ -389,6 +421,82 @@ public class TestApiListActivity extends BaseActivity {
 					final GetRelativeGroupListResponse response = InternetUtils.request( 
 							TestApiListActivity.this.getApplicationContext(), new GetRelativeGroupListRequest(groupId));
 					if (response != null) {
+                    	ToTextView(response.toString());
+                    }else{
+                    	ToTextView("null");
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }));
+    }
+    
+    private void getCommentList() {
+        CustomThreadPool.getInstance().excute(new TaskWrapper(new Runnable() {
+            @Override
+            public void run() {
+                try {
+					final getCommentsResponse response = InternetUtils.request( 
+							TestApiListActivity.this.getApplicationContext(), new getCommentsRequest(94, 1));
+                    if (response != null) {
+                    	ToTextView(response.toString());
+                    }else{
+                    	ToTextView("null");
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }));
+    }
+    
+    private void getUserInfo() {
+        CustomThreadPool.getInstance().excute(new TaskWrapper(new Runnable() {
+            @Override
+            public void run() {
+                try {
+					final GetUserInfoResponse response = InternetUtils.request( 
+							TestApiListActivity.this.getApplicationContext(), new GetUserInfoRequest(52));
+                    if (response != null) {
+                    	ToTextView(response.toString());
+                    }else{
+                    	ToTextView("null");
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }));
+    }
+    
+    private void getOrders() {
+        CustomThreadPool.getInstance().excute(new TaskWrapper(new Runnable() {
+            @Override
+            public void run() {
+                try {
+					final GetOrdersResponse response = InternetUtils.request( 
+							TestApiListActivity.this.getApplicationContext(), new GetOrdersRequest(1, 1));
+                    if (response != null) {
+                    	ToTextView(response.toString());
+                    }else{
+                    	ToTextView("null");
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }));
+    }
+    
+    private void getGroupbond() {
+        CustomThreadPool.getInstance().excute(new TaskWrapper(new Runnable() {
+            @Override
+            public void run() {
+                try {
+					final GetGroupbondResponse response = InternetUtils.request( 
+							TestApiListActivity.this.getApplicationContext(), new GetGroupbondRequest(1, 1));
+                    if (response != null) {
                     	ToTextView(response.toString());
                     }else{
                     	ToTextView("null");

@@ -65,7 +65,7 @@ public class GetAreaListResponse extends ResponseBase {
 		}
 	}
 
-	public GroupAreaInfo[] groupAreaInfo ;
+	public GroupAreaInfo[] groupAreaInfo;
 	
     @JsonCreator
     public GetAreaListResponse(

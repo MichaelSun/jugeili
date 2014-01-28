@@ -6,16 +6,16 @@ import com.plugin.internet.core.json.JsonProperty;
 
 public class LoginResponse extends ResponseBase {
 	public String user_id;
-	public String result;
+	public String status;
 	public String message;
 	
     @JsonCreator
     public LoginResponse(
             @JsonProperty("user_id") String user_id,
-            @JsonProperty("result") String result,
+            @JsonProperty("status") String status,
             @JsonProperty("message") String message) {
         this.user_id = user_id;
-        this.result = result;
+        this.status = status;
         this.message = message;
     }
 }
