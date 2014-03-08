@@ -12,5 +12,9 @@
     <dimen name="sublist_dest_size">13sp</dimen>
     <dimen name="sublist_bottom_location_size">13sp</dimen>
     <dimen name="sublist_top_size">15sp</dimen>
+    
+    <!-- detail textsize -->
+    <dimen name="detail_price_size">36sp</dimen>
+    <dimen name="detail_origin_price_size">18sp</dimen>
 
 </resources>

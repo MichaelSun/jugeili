@@ -23,6 +23,13 @@
     <string name="tuangou_title">团购</string>
     <string name="tuangou_yuan">元</string>
     <string name="tuangou_ren">人</string>
+    <string name="order_default">默认排序</string>
+    <string name="order_near">离我最近</string>
+    <string name="order_comment">评价最高</string>
+    <string name="order_new">最新发布</string>
+    <string name="order_popu">人气最高</string>
+    <string name="order_low_price">价格最低</string>
+    <string name="order_high_price">价格最高</string>
 
     <!-- 我的 -->
     <string name="profile_title">我的</string>
@@ -36,9 +43,38 @@
     <string name="lucky">抽奖单</string>
     <string name="coupon">代金券</string>
     
+    <!-- 详情 -->
+    <string name="group_detail">团购详情</string>
+    <string name="buy">立即抢购</string>
+    <string name="buy_num">人已购买</string>
+    <string name="merchant_info">商家信息</string>
+    <string name="merchant_all">查看全部分店</string>
+    <string name="group_set">套餐</string>
+    <string name="check_detail">查看图文详情</string>
+    <string name="discuss">评价</string>
+    <string name="view_all_discuss">查看全部评价</string>
+    
     <!-- 更多 -->
     <string name="more_title">更多</string>
+    <string name="only_wifi">仅wifi下显示团购图片</string>
+    <string name="new_notify_everyday">新单每日提醒</string>
+    <string name="notify_time">提醒时间</string>
+    <string name="share_setting">分享设置</string>
+    <string name="clear_cache">清空缓存</string>
+    <string name="suggestion_feedback">意见反馈</string>
+    <string name="pay_help">支付帮助</string>
+    <string name="check_update">检查更新</string>
+    <string name="about_jugeili">关于聚给力</string>
+    <string name="favour_app">精品应用</string>
     
+    <!-- 登录 -->
+    <string name="username">用户名</string>
+    <string name="password">密码</string>
+    <string name="login">登录</string>
+    <string name="email_password_error_tips">邮箱和密码都不能为空</string>
+    
+    
+    <string name="network_error_tips">网络错误</string>
 
     
 </resources>

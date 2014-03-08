@@ -1,5 +1,6 @@
 package com.tugou.jgl.fragment;
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.os.Handler;
@@ -10,10 +11,19 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
+import com.plugin.common.utils.CustomThreadPool;
+import com.plugin.common.utils.CustomThreadPool.TaskWrapper;
+import com.plugin.internet.InternetUtils;
 import com.tugou.jgl.R;
 import com.tugou.jgl.adapter.SubListAdater;
+import com.tugou.jgl.api.GetListGroupRequest;
+import com.tugou.jgl.api.GetListGroupResponse;
+import com.tugou.jgl.api.NearbyListRequest;
+import com.tugou.jgl.api.NearbyListResponse;
+import com.tugou.jgl.api.NearbyListResponse.GroupInfo;
 import com.tugou.jgl.popupmenu.RRMenuItem;
 import com.tugou.jgl.popupmenu.RRPopupMenu;
+import com.tugou.jgl.utils.Constant;
 
 /**
  * Created with IntelliJ IDEA.
@@ -28,6 +38,9 @@ public class SubListFragment extends Fragment {
     private ListView mlistView;
 
     private RRPopupMenu mPopupMenu;
+    private int subListPositon;
+    
+    private GroupInfo[] groupInfo;
 
     private static final int SET_LIST = 1;
     private Handler mHandler = new Handler() {
@@ -35,7 +48,7 @@ public class SubListFragment extends Fragment {
         public void handleMessage(Message msg) {
             switch (msg.what) {
                 case SET_LIST:
-                    mlistView.setAdapter(new SubListAdater(getActivity().getLayoutInflater()));
+                    mlistView.setAdapter(new SubListAdater(getActivity().getLayoutInflater(), groupInfo));
                     break;
             }
         }
@@ -65,7 +78,11 @@ public class SubListFragment extends Fragment {
             }
         });
 
-        mHandler.sendEmptyMessage(SET_LIST);
+        //mHandler.sendEmptyMessage(SET_LIST);
+        getSubListReq();
+        
+        Bundle bundle = getActivity().getIntent().getExtras();
+        subListPositon = bundle.getInt("position");
 
         initPopupMenu();
         initUIView(view);
@@ -88,6 +105,49 @@ public class SubListFragment extends Fragment {
                 mPopupMenu.show(cate);
             }
         });
+    }
+    
+    private void getSubListReq(){
+    	switch(subListPositon){
+    	case 0:
+    		getNearbyList(0, 0, 0, 0, 0, 0);
+    		break;
+    	case 1:
+    		break;
+    	case 2:
+    		break;
+    	default:
+    		break;
+    	}
+    }
+    
+    private void getNearbyList(final float dest, final int category, final int order, final int city, final int is_no_order, final int is_holiday_can_use) {
+        CustomThreadPool.getInstance().excute(new TaskWrapper(new Runnable() {
+            @Override
+            public void run() {
+                try {
+					final NearbyListResponse response = InternetUtils.request( 
+							SubListFragment.this.getActivity().getApplicationContext(), new NearbyListRequest(39.92, 
+									116.46, 
+									dest, 
+									category, 
+									order, 
+									city,
+									is_no_order,
+									is_holiday_can_use));
+                    if (response != null) {
+//                    	if(response.result.groupInfo.length != 0){
+//                    		groupInfo = response.result.groupInfo
+//                    	}
+                    	groupInfo = response.groupInfo;
+                    	//GetCategoryList();
+                    	mHandler.sendEmptyMessage(SET_LIST);
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }));
     }
 
 }

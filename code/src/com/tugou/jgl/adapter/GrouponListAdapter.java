@@ -69,7 +69,7 @@ public class GrouponListAdapter extends ImageListTypeBaseAdapter {
 //        holder.coverImageView.setImageURI(new Uri.Builder()
 //                      .path("http://ww4.sinaimg.cn/bmiddle/6aadc52dgw1e827avbgzyj21kw11x129.jpg").build());
         holder.coverImageView.setImageURI(new Uri.Builder()
-        .path(groupInfo[position].cover).build());
+        .path(Constant.BASE_URL + groupInfo[position].cover).build());
         holder.tv_title.setText(groupInfo[position].name);
         holder.tv_description.setText(groupInfo[position].description);
         holder.tv_price.setText(groupInfo[position].price + mLayoutInflater.getContext().getString(R.string.tuangou_yuan));

@@ -13,6 +13,7 @@ import android.widget.*;
 import com.plugin.common.view.WebImageView;
 import com.tugou.jgl.R;
 import com.tugou.jgl.activity.SubListActivity;
+import com.tugou.jgl.utils.Debug;
 
 /**
  * Created with IntelliJ IDEA.
@@ -53,7 +54,11 @@ public class LocationFrament extends Fragment {
         gv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            	Debug.LOGD("---------------positon = " + position);
                 Intent i = new Intent();
+                Bundle bundle = new Bundle();
+                bundle.putInt("position", position);    
+                i.putExtras(bundle);
                 i.setClass(getActivity().getApplicationContext(), SubListActivity.class);
                 getActivity().startActivity(i);
             }

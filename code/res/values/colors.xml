@@ -11,6 +11,7 @@
     <color name="gray6">#F2F2F2</color>
     <color name="gray7">#DEDEDE</color>
     <color name="gray8">#c3c3c1</color>
+    <color name="gray9">#959991</color>
 
     <!-- list item color info -->
     <drawable name="default_cover">#ced0d1</drawable>
@@ -126,5 +127,8 @@
     <color name="text_color_3">#71736e</color>
     
     <!-- register page color -->
+    
+    <!-- detail page color -->
+    <color name="detail_text_color_1">#ff7f00</color>
     
 </resources>
