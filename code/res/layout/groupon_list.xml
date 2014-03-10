@@ -9,6 +9,7 @@
         android:id="@+id/top_region"
         android:layout_width="match_parent"
         android:layout_height="44dp"
+        android:orientation="horizontal"
         android:layout_alignParentTop="true">
         <TextView
             android:id="@+id/category"
@@ -26,7 +27,7 @@
             android:paddingRight="7dp"/>
 
         <TextView
-            android:id="@+id/dest"
+            android:id="@+id/location"
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
             android:background="@drawable/sublist_top"
@@ -40,7 +41,7 @@
             android:paddingLeft="10dp"
             android:paddingRight="7dp"/>
         <TextView
-            android:id="@+id/my_dest"
+            android:id="@+id/order"
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
             android:background="@drawable/sublist_top2"

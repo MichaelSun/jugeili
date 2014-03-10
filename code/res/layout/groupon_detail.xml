@@ -66,7 +66,8 @@
 	        android:background="@drawable/detail_btn_n"
 	        android:text="@string/buy"
 	        android:textSize="16dp"
-	        android:textColor="@color/white"/>   
+	        android:textColor="@color/white"
+            android:visibility="gone"/>
     </RelativeLayout>
     
     <TextView 

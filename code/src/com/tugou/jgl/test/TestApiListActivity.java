@@ -5,51 +5,15 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
+import android.widget.*;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.BaseAdapter;
-import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
-
 import com.plugin.common.utils.CustomThreadPool;
 import com.plugin.common.utils.CustomThreadPool.TaskWrapper;
-import com.plugin.common.utils.StringUtils;
 import com.plugin.internet.InternetUtils;
 import com.tugou.jgl.R;
 import com.tugou.jgl.activity.BaseActivity;
-import com.tugou.jgl.activity.LoginActivity;
-import com.tugou.jgl.api.GetAreaListRequest;
-import com.tugou.jgl.api.GetAreaListResponse;
-import com.tugou.jgl.api.GetCategoryListRequest;
-import com.tugou.jgl.api.GetCategoryListResponse;
-import com.tugou.jgl.api.GetCityListRequest;
-import com.tugou.jgl.api.GetCityListResponse;
-import com.tugou.jgl.api.GetGoodDetailRequest;
-import com.tugou.jgl.api.GetGoodDetailResponse;
-import com.tugou.jgl.api.GetGroupbondRequest;
-import com.tugou.jgl.api.GetGroupbondResponse;
-import com.tugou.jgl.api.GetListGroupRequest;
-import com.tugou.jgl.api.GetListGroupResponse;
-import com.tugou.jgl.api.GetOrdersRequest;
-import com.tugou.jgl.api.GetOrdersResponse;
-import com.tugou.jgl.api.GetRelativeGroupListRequest;
-import com.tugou.jgl.api.GetRelativeGroupListResponse;
-import com.tugou.jgl.api.GetUserInfoRequest;
-import com.tugou.jgl.api.GetUserInfoResponse;
-import com.tugou.jgl.api.LoginRequest;
-import com.tugou.jgl.api.LoginResponse;
-import com.tugou.jgl.api.NearbyListRequest;
-import com.tugou.jgl.api.NearbyListResponse;
-import com.tugou.jgl.api.SearchGoodsRequest;
-import com.tugou.jgl.api.SearchGoodsResponse;
-import com.tugou.jgl.api.getCommentsRequest;
-import com.tugou.jgl.api.getCommentsResponse;
-import com.tugou.jgl.base.Evnironment;
-import com.tugou.jgl.fragment.GroupOnFragment;
-import com.tugou.jgl.fragment.SubListFragment;
+import com.tugou.jgl.api.*;
 import com.tugou.jgl.utils.Constant;
-import com.tugou.jgl.utils.Debug;
 
 public class TestApiListActivity extends BaseActivity {
 	
@@ -83,7 +47,7 @@ public class TestApiListActivity extends BaseActivity {
 	        		Login("user", "123456");
 	        		break;
 	        	case TestConstant.NearbyListRequest:
-	        		getNearbyList(100, 0, 0, 0, 0, 0);
+	        		getNearbyList(100, 0, 0, 1, 0, 0, 0);
 	        		break;
 	        	case TestConstant.GetAreaListRequest:
 	        		getAreaList(0, 1);	
@@ -292,7 +256,7 @@ public class TestApiListActivity extends BaseActivity {
         }));
     }
 	
-    private void getNearbyList(final float dest, final int category, final int order, final int city, final int is_no_order, final int is_holiday_can_use) {
+    private void getNearbyList(final float dest, final int category, final int order, final int distance, final int city, final int is_no_order, final int is_holiday_can_use) {
         CustomThreadPool.getInstance().excute(new TaskWrapper(new Runnable() {
             @Override
             public void run() {
@@ -302,7 +266,8 @@ public class TestApiListActivity extends BaseActivity {
 									116.46, 
 									dest, 
 									category, 
-									order, 
+									order,
+                                    distance,
 									city,
 									is_no_order,
 									is_holiday_can_use));

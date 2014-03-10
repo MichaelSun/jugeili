@@ -4,6 +4,7 @@ import android.app.Application;
 import com.plugin.common.utils.UtilsConfig;
 import com.plugin.common.utils.crash.CrashHandler;
 import com.plugin.common.utils.files.FileInfo;
+import com.tugou.jgl.utils.SettingManager;
 
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -17,6 +18,8 @@ public class JGLApplication extends Application implements CrashHandler.CrashHan
         CrashHandler.getInstance().init(getApplicationContext());
         CrashHandler.getInstance().setCrashHandlerListener(this);
         UtilsConfig.init(getApplicationContext());
+
+        SettingManager.getInstance().init(getApplicationContext());
     }
 
     @Override

@@ -42,10 +42,10 @@
         <activity
             android:name=".test.TestApiListActivity"
             android:label="@string/app_name">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN"/>-->
+                <!--<category android:name="android.intent.category.LAUNCHER"/>-->
+            <!--</intent-filter>-->
         </activity>
 
         <activity
@@ -65,6 +65,8 @@
             android:name=".test.TestRespActivity"
             android:theme="@style/AppTheme"
             android:screenOrientation="portrait"/>
+        <activity android:name=".activity.GeiLiJuanActivity"/>
+        <activity android:name=".activity.MyProfileInfoActivity"/>
     </application>
 
 </manifest>

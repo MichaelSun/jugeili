@@ -7,7 +7,6 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -18,6 +17,7 @@ import com.tugou.jgl.fragment.GroupOnFragment;
 import com.tugou.jgl.fragment.LocationFrament;
 import com.tugou.jgl.fragment.MoreFragment;
 import com.tugou.jgl.fragment.MyFragment;
+import com.tugou.jgl.utils.SettingManager;
 import com.tugou.jgl.utils.UploadCellIdThread;
 
 public class JuGeiLiActivity extends BaseActivity {
@@ -117,28 +117,27 @@ public class JuGeiLiActivity extends BaseActivity {
         mProfileTV.setTextColor(getResources().getColor(R.color.bottom_normal_color));
         mMoreTV.setTextColor(getResources().getColor(R.color.bottom_normal_color));
 
-        ImageView imageSet = null;
         TextView textSet = null;
         switch (index) {
             case R.id.location:
-                imageSet = mLocationImage;
                 textSet = mLocationTV;
+                mLocationImage.setImageResource(R.drawable.location_press);
                 break;
             case R.id.tuangou:
-                imageSet = mTuangouImage;
                 textSet = mTuangouTV;
+                mTuangouImage.setImageResource(R.drawable.tuangou_press);
                 break;
             case R.id.profile:
-                imageSet = mProfileImage;
                 textSet = mProfileTV;
+                mProfileImage.setImageResource(R.drawable.profile_press);
                 break;
             case R.id.more:
-                imageSet = mMoreImage;
                 textSet = mMoreTV;
+                mMoreImage.setImageResource(R.drawable.more_press);
                 break;
         }
-        if (textSet != null && imageSet != null) {
-            imageSet.setImageResource(R.drawable.location_press);
+        if (textSet != null) {
+//            imageSet.setImageResource(R.drawable.location_press);
             textSet.setTextColor(getResources().getColor(R.color.bottom_pressed_color));
         }
     }
@@ -228,6 +227,13 @@ public class JuGeiLiActivity extends BaseActivity {
                 break;
 
             case R.id.profile:
+                if (!SettingManager.getInstance().getBooleanProperty("login")) {
+                    Intent i = new Intent();
+                    i.setClass(getApplicationContext(), LoginActivity.class);
+                    startActivity(i);
+                    return;
+                }
+
                 mCurrSelectedTabId = R.id.profile;
                 mActionbar.setDisplayOptions(ActionBar.DISPLAY_SHOW_TITLE);
                 mActionbar.setTitle(R.string.profile_title);

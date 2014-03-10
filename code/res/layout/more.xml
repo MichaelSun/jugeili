@@ -119,7 +119,8 @@
         android:layout_below="@id/notify_time"
         android:layout_marginLeft="6dp"
         android:layout_marginRight="6dp"
-        android:background="@drawable/my_tab_center">
+        android:background="@drawable/my_tab_center"
+        android:visibility="gone">
         
         <TextView 
             android:id="@+id/tv_share_setting"
@@ -150,7 +151,8 @@
         android:layout_below="@id/share_setting"
         android:layout_marginLeft="6dp"
         android:layout_marginRight="6dp"
-        android:background="@drawable/my_tab_below">
+        android:background="@drawable/my_tab_below"
+        android:visibility="gone">
         
         <TextView 
             android:id="@+id/tv_clear_cache"
@@ -223,7 +225,8 @@
         android:layout_below="@id/feedback"
         android:layout_marginLeft="6dp"
         android:layout_marginRight="6dp"
-        android:background="@drawable/my_tab_center">
+        android:background="@drawable/my_tab_center"
+        android:visibility="gone">
         
         <TextView 
             android:id="@+id/tv_pay_help"
@@ -254,7 +257,8 @@
         android:layout_below="@id/pay_help"
         android:layout_marginLeft="6dp"
         android:layout_marginRight="6dp"
-        android:background="@drawable/my_tab_center">
+        android:background="@drawable/my_tab_center"
+        android:visibility="gone">
         
         <TextView 
             android:id="@+id/tv_check_update"
@@ -273,7 +277,7 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
-            android:text="当前版本v3.2.1"
+            android:text="当前版本v1.0"
             android:textSize="13dp"
             android:textColor="@color/gray9"
             />
@@ -328,7 +332,8 @@
         android:layout_marginTop="10dp"
         android:layout_marginLeft="6dp"
         android:layout_marginRight="6dp"
-        android:background="@drawable/my_tab">
+        android:background="@drawable/my_tab"
+        android:visibility="gone">
         
         <TextView 
             android:id="@+id/tv_favour_app"

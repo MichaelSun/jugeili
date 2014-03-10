@@ -18,6 +18,9 @@ public class NearbyListRequest extends RequestBase<NearbyListResponse> {
     
     @RequiredParam("category")
     private int category;
+
+    @RequiredParam("distance")
+    private int distance;
     
     @OptionalParam("order")
     private int order;
@@ -31,12 +34,13 @@ public class NearbyListRequest extends RequestBase<NearbyListResponse> {
     @OptionalParam("is_holiday_can_use")
     private int is_holiday_can_use;
 
-    public NearbyListRequest(double lat, double lon, float dest, int category, int order, int city, int is_no_order, int is_holiday_can_use) {
+    public NearbyListRequest(double lat, double lon, float dest, int category, int order, int distance, int city, int is_no_order, int is_holiday_can_use) {
     	this.lat = lat ;
     	this.lon = lon;
     	this.dest = dest;
     	this.category = category;
     	this.order = order;
+        this.distance = distance;
     	this.city = city;
     	this.is_no_order = is_no_order;
     	this.is_holiday_can_use = is_holiday_can_use;
